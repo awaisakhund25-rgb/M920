@@ -1,0 +1,3456 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M920 VIP — Official iGaming &amp; Color Prediction Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            pakBg: '#0b090e',
+            pakCard: '#15111b',
+            pakSurface: '#1e1826',
+            pakCrimson: '#e62e3d',
+            pakOrange: '#ff6b2b',
+            pakGold: '#ffbe3b',
+            pakGoldLight: '#ffe48f',
+            pakGreen: '#16c784',
+            pakViolet: '#9b51e0',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: #0b090e; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 107, 43, 0.45); border-radius: 9999px; }
+
+    .pak-header-grad {
+      background: linear-gradient(135deg, #2a0a12 0%, #170d18 55%, #24130a 100%);
+    }
+    .pak-fire-btn {
+      background: linear-gradient(135deg, #ff7a2f 0%, #e62e3d 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(230, 46, 61, 0.38);
+    }
+    .pak-fire-btn:hover { filter: brightness(1.08); }
+
+    .pak-gold-btn {
+      background: linear-gradient(135deg, #ffe48f 0%, #ffbe3b 48%, #f58216 100%);
+      color: #160c05;
+      box-shadow: 0 6px 18px rgba(255, 190, 59, 0.34);
+    }
+    .pak-gold-btn:hover { filter: brightness(1.06); }
+
+    .pak-card {
+      background: linear-gradient(170deg, #1a1423 0%, #110d17 100%);
+      border: 1px solid rgba(255, 190, 59, 0.16);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+    }
+
+    /* 3D Glossy Lottery Ball Effect */
+    .lotto-ball {
+      box-shadow: inset -3px -4px 8px rgba(0,0,0,0.45), inset 2px 3px 6px rgba(255,255,255,0.45), 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .ball-green { background: radial-gradient(circle at 30% 28%, #5ef2b3, #16c784 55%, #0a7a4f 100%); }
+    .ball-red { background: radial-gradient(circle at 30% 28%, #ff7a85, #e62e3d 55%, #99111d 100%); }
+    .ball-violet-green { background: linear-gradient(135deg, #16c784 50%, #9b51e0 50%); }
+    .ball-violet-red { background: linear-gradient(135deg, #e62e3d 50%, #9b51e0 50%); }
+
+    @keyframes marqueeTicker {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-pak-marquee {
+      display: flex;
+      width: max-content;
+      animation: marqueeTicker 24s linear infinite;
+    }
+
+    @keyframes slotReelPulse {
+      0% { transform: translateY(-8px) scale(0.95); opacity: 0.7; }
+      50% { transform: translateY(8px) scale(1.03); opacity: 1; }
+      100% { transform: translateY(-8px) scale(0.95); opacity: 0.7; }
+    }
+    .slot-spinning { animation: slotReelPulse 0.13s linear infinite; }
+
+    @keyframes coinFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(150px) rotate(360deg); opacity: 0; }
+    }
+    .coin-particle {
+      position: absolute;
+      animation: coinFall 1.1s ease-in forwards;
+    }
+  </style>
+</head>
+<body class="bg-pakBg text-slate-100 font-sans min-h-screen flex flex-col selection:bg-pakOrange/30 selection:text-pakGoldLight">
+
+  <!-- ==================== 1. TOP APP BAR & LIVE JACKPOT HEADER ==================== -->
+  <header class="sticky top-0 z-40 pak-header-grad border-b border-pakGold/25 backdrop-blur-xl">
+    <div class="max-w-3xl mx-auto px-3 py-2 flex items-center justify-between gap-2">
+      <!-- M920 VIP Crown Brand -->
+      <button type="button" onclick="switchBottomTab('home')" class="flex items-center gap-2 text-left cursor-pointer shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-pakGoldLight via-pakOrange to-pakCrimson p-[1.5px] shadow-lg shadow-pakCrimson/30">
+          <div class="w-full h-full rounded-[10px] bg-pakBg flex flex-col items-center justify-center leading-none">
+            <span class="text-[10px]">👑</span>
+            <span class="font-black font-mono text-[10px] text-pakGold">M920</span>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1">
+            <span class="font-black text-sm sm:text-base tracking-tight bg-gradient-to-r from-pakGoldLight via-pakGold to-pakOrange bg-clip-text text-transparent">
+              M920 VIP
+            </span>
+            <span class="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-pakCrimson text-white">PRO</span>
+          </div>
+          <div class="text-[10px] text-slate-300 font-mono hidden sm:block">Official PakVIP Edition</div>
+        </div>
+      </button>
+
+      <!-- Right Controls: PKR Balance + '+' Deposit, Sound, Support -->
+      <div class="flex items-center gap-1.5">
+        <div class="flex items-center bg-black/55 border border-pakGold/40 rounded-full pl-2.5 pr-1 py-1 gap-1.5">
+          <span class="text-[10px] font-extrabold text-pakGold">Rs.</span>
+          <span id="topWalletBalance" class="font-mono font-extrabold text-xs sm:text-sm text-white">5,000.00</span>
+          <button
+            type="button"
+            onclick="openDepositDirectly()"
+            class="w-6 h-6 rounded-full pak-fire-btn flex items-center justify-center font-black text-sm leading-none cursor-pointer"
+            title="Instant Deposit"
+          >
+            +
+          </button>
+        </div>
+
+        <button
+          type="button"
+          onclick="toggleAppSound()"
+          class="w-8 h-8 rounded-full bg-pakSurface border border-white/10 flex items-center justify-center text-xs text-pakGold cursor-pointer"
+          title="Toggle Sound Effects"
+        >
+          <span id="soundStatusEmoji">🔊</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="openSupportModal()"
+          class="w-8 h-8 rounded-full bg-pakSurface border border-white/10 flex items-center justify-center text-xs text-pakOrange cursor-pointer"
+          title="24/7 VIP Customer Support"
+        >
+          🎧
+        </button>
+      </div>
+    </div>
+
+    <!-- Rolling Super Jackpot Strip -->
+    <div class="bg-gradient-to-r from-[#3a0b14] via-[#4d1410] to-[#3a0b14] border-t border-pakGold/20 px-3 py-1">
+      <div class="max-w-3xl mx-auto flex items-center justify-between text-[11px]">
+        <div class="flex items-center gap-1.5 font-extrabold text-pakGoldLight">
+          <span>🏆 SUPER JACKPOT</span>
+        </div>
+        <div id="superJackpotCounter" class="font-mono font-black text-xs sm:text-sm tracking-wider text-pakGold drop-shadow-[0_0_8px_rgba(255,190,59,0.5)]">
+          Rs. 48,92,450.00
+        </div>
+        <span class="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-pakGreen/20 text-pakGreen border border-pakGreen/40">LIVE POOL</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- NON-BLOCKING TOAST NOTIFICATION -->
+  <div
+    id="pakToast"
+    class="hidden fixed top-24 left-1/2 -translate-x-1/2 z-50 max-w-[92vw] rounded-full bg-pakSurface/95 border border-pakGold/60 px-4 py-2 text-xs font-bold text-pakGoldLight shadow-2xl backdrop-blur-md flex items-center gap-2"
+  >
+    <span class="w-2 h-2 rounded-full bg-pakOrange animate-ping"></span>
+    <span id="pakToastText"></span>
+  </div>
+
+  <!-- MAIN MOBILE APP CONTAINER -->
+  <main class="flex-1 max-w-3xl w-full mx-auto px-3 pt-2.5 pb-24 space-y-3.5">
+
+    <!-- ==================== TAB 1: HOME LOBBY (PAK-VIP / 92JEETO STYLE) ==================== -->
+    <section id="tab-home" class="main-tab-section space-y-3.5">
+
+      <!-- Auto-Sliding VIP Promo Banner Carousel -->
+      <div class="relative rounded-2xl overflow-hidden border border-pakGold/35 shadow-xl">
+        <div id="promoSlideBox" class="p-4 sm:p-5 bg-gradient-to-r from-[#3d0c18] via-[#2b101d] to-[#3d1c0a] transition-all duration-300">
+          <div class="flex items-center justify-between gap-3">
+            <div class="space-y-1">
+              <span id="promoSlideTag" class="inline-block text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-pakGold/20 text-pakGold border border-pakGold/40">
+                FIRST DEPOSIT BONUS
+              </span>
+              <h1 id="promoSlideTitle" class="text-base sm:text-xl font-black text-white leading-tight">
+                100% FIRST DEPOSIT BONUS UP TO RS. 50,000
+              </h1>
+              <p id="promoSlideDesc" class="text-[11px] sm:text-xs text-slate-200">
+                Instant EasyPaisa &amp; JazzCash top-up with automatic VIP rebate!
+              </p>
+            </div>
+            <button
+              type="button"
+              id="promoSlideBtn"
+              onclick="triggerPromoSlideAction()"
+              class="px-3.5 py-2.5 rounded-xl pak-gold-btn font-black text-xs uppercase shrink-0 cursor-pointer"
+            >
+              Deposit →
+            </button>
+          </div>
+          <div class="flex items-center gap-1.5 mt-3">
+            <button type="button" onclick="goPromoSlide(0)" class="promo-dot w-5 h-1.5 rounded-full bg-pakGold cursor-pointer"></button>
+            <button type="button" onclick="goPromoSlide(1)" class="promo-dot w-2 h-1.5 rounded-full bg-white/30 cursor-pointer"></button>
+            <button type="button" onclick="goPromoSlide(2)" class="promo-dot w-2 h-1.5 rounded-full bg-white/30 cursor-pointer"></button>
+            <button type="button" onclick="goPromoSlide(3)" class="promo-dot w-2 h-1.5 rounded-full bg-white/30 cursor-pointer"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Announcement Marquee Bar with Speaker Icon -->
+      <div class="rounded-xl bg-pakCard border border-pakOrange/25 px-3 py-1.5 flex items-center gap-2 overflow-hidden">
+        <span class="text-sm shrink-0">📢</span>
+        <div class="overflow-hidden flex-1">
+          <div id="pakAnnouncementMarquee" class="animate-pak-marquee gap-8 text-[11px] font-mono text-pakGoldLight"></div>
+        </div>
+        <button type="button" onclick="switchBottomTab('activity')" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full pak-fire-btn shrink-0 cursor-pointer">
+          Detail
+        </button>
+      </div>
+
+      <!-- Quick Action Strip (4 Glossy Icon Buttons) -->
+      <div class="grid grid-cols-4 gap-2">
+        <button type="button" onclick="openLuckyWheelModal()" class="pak-card hover:border-pakGold/50 rounded-2xl p-2.5 flex flex-col items-center justify-center text-center transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-pakGold to-pakOrange flex items-center justify-center text-lg shadow-md">🎡</div>
+          <span class="text-[10px] sm:text-xs font-extrabold text-white mt-1.5">Lucky Wheel</span>
+        </button>
+        <button type="button" onclick="openCheckinModal()" class="pak-card hover:border-pakGold/50 rounded-2xl p-2.5 flex flex-col items-center justify-center text-center transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-pakCrimson to-rose-700 flex items-center justify-center text-lg shadow-md">📅</div>
+          <span class="text-[10px] sm:text-xs font-extrabold text-white mt-1.5">Check-In</span>
+        </button>
+        <button type="button" onclick="switchBottomTab('activity')" class="pak-card hover:border-pakGold/50 rounded-2xl p-2.5 flex flex-col items-center justify-center text-center transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-pakGreen flex items-center justify-center text-lg shadow-md">🎁</div>
+          <span class="text-[10px] sm:text-xs font-extrabold text-white mt-1.5">Rebate</span>
+        </button>
+        <button type="button" onclick="switchBottomTab('account')" class="pak-card hover:border-pakGold/50 rounded-2xl p-2.5 flex flex-col items-center justify-center text-center transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center text-lg shadow-md">👑</div>
+          <span class="text-[10px] sm:text-xs font-extrabold text-white mt-1.5">VIP Levels</span>
+        </button>
+      </div>
+
+      <!-- AUTHENTIC PAKVIP LOBBY: LEFT VERTICAL CATEGORY SIDEBAR + RIGHT GAME GRID -->
+      <div class="grid grid-cols-12 gap-2.5 items-start">
+        <!-- Left Vertical Category Sidebar (3 cols) -->
+        <aside class="col-span-3 space-y-1.5 sticky top-24">
+          <button type="button" data-lobbycat="all" onclick="selectLobbyCategory('all')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-fire-btn">
+            <span class="text-base">👑</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">All (13)</span>
+          </button>
+          <button type="button" data-lobbycat="hot" onclick="selectLobbyCategory('hot')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">🔥</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">Hot</span>
+          </button>
+          <button type="button" data-lobbycat="crash" onclick="selectLobbyCategory('crash')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">✈️</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">Crash</span>
+          </button>
+          <button type="button" data-lobbycat="slots" onclick="selectLobbyCategory('slots')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">💎</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">JILI Slots</span>
+          </button>
+          <button type="button" data-lobbycat="lottery" onclick="selectLobbyCategory('lottery')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">🎱</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">Lottery</span>
+          </button>
+          <button type="button" data-lobbycat="casino" onclick="selectLobbyCategory('casino')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">🐉</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">Casino</span>
+          </button>
+          <button type="button" data-lobbycat="mini" onclick="selectLobbyCategory('mini')" class="lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300">
+            <span class="text-base">🎲</span>
+            <span class="text-[10px] font-extrabold mt-0.5 leading-tight">Dice &amp; Mini</span>
+          </button>
+        </aside>
+
+        <!-- Right Game Tiles Grid (9 cols) -->
+        <div class="col-span-9 space-y-2.5">
+          <div class="flex items-center justify-between px-1">
+            <h2 id="lobbyCategoryHeading" class="text-xs sm:text-sm font-black uppercase tracking-wide text-pakGoldLight">👑 All 13 VIP Casino Games</h2>
+            <span id="lobbyVisibleCount" class="text-[10px] font-mono text-slate-400">13 Games Online</span>
+          </div>
+
+          <div id="lobbyGameTilesGrid" class="grid grid-cols-2 gap-2.5">
+            <!-- Tile 1: Aviator (SPRIBE) -->
+            <div data-cats="all hot crash" onclick="launchGameScreen('aviator')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#470a18] via-[#1c0c16] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakCrimson text-white">SPRIBE</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">RTP 97.4%</span>
+                </div>
+                <svg class="w-16 h-12 mx-auto drop-shadow-[0_0_12px_rgba(230,46,61,0.75)] group-hover:scale-110 transition" viewBox="0 0 100 70" fill="none">
+                  <path d="M8 60 Q 48 54 88 12" stroke="#ff6b2b" stroke-width="4" stroke-linecap="round" />
+                  <path d="M80 10 L95 8 L88 22 L84 15 Z" fill="#ffe48f" />
+                </svg>
+                <span class="text-[9px] font-mono text-pakGreen font-bold">🔥 2,410 Playing</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Aviator</div>
+                  <div class="text-[9px] text-slate-400">Dual-Bet Crash</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 2: Win Go 30s / 1m / 3m / 5m -->
+            <div data-cats="all hot lottery" onclick="launchGameScreen('wingo')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#0b3326] via-[#171126] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakGold text-pakBg">M920 LOTTERY</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGreen">30S–5M</span>
+                </div>
+                <div class="flex items-center justify-center gap-1.5 my-auto group-hover:scale-110 transition">
+                  <span class="w-7 h-7 rounded-full lotto-ball ball-green flex items-center justify-center font-mono font-black text-xs text-white">1</span>
+                  <span class="w-7 h-7 rounded-full lotto-ball ball-violet-green flex items-center justify-center font-mono font-black text-xs text-white">5</span>
+                  <span class="w-7 h-7 rounded-full lotto-ball ball-red flex items-center justify-center font-mono font-black text-xs text-white">8</span>
+                </div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">🔥 9x Color Draw</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Win Go Lottery</div>
+                  <div class="text-[9px] text-slate-400">30s / 1m / 3m / 5m</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 3: Fortune Gems 2 (JILI) -->
+            <div data-cats="all hot slots" onclick="launchGameScreen('gems')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#452408] via-[#26121c] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakOrange text-white">JILI</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">MAX 15X</span>
+                </div>
+                <div class="text-3xl text-center my-auto drop-shadow-[0_0_12px_rgba(255,190,59,0.75)] group-hover:scale-110 transition">💎</div>
+                <span class="text-[9px] font-mono text-pakGold font-bold">🔥 3x3 + Bonus Wheel</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Fortune Gems 2</div>
+                  <div class="text-[9px] text-slate-400">JILI Multiplier Slot</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 4: Money Coming (JILI) -->
+            <div data-cats="all hot slots" onclick="launchGameScreen('moneycoming')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#0e381c] via-[#2c2108] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakOrange text-white">JILI</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGreen">INSTANT CASH</span>
+                </div>
+                <div class="flex items-center justify-center gap-1 my-auto group-hover:scale-110 transition">
+                  <span class="px-1.5 py-1 rounded bg-pakGold text-pakBg font-mono font-black text-sm">1</span>
+                  <span class="px-1.5 py-1 rounded bg-pakGold text-pakBg font-mono font-black text-sm">0</span>
+                  <span class="px-1.5 py-1 rounded bg-pakCrimson text-white font-mono font-black text-sm">5x</span>
+                </div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">💵 3-Digit Cash Reel</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Money Coming</div>
+                  <div class="text-[9px] text-slate-400">JILI Cash Wheel</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 5: Super Ace / Golden Empire (JILI) -->
+            <div data-cats="all hot slots" onclick="launchGameScreen('superace')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#3b1b0a] via-[#2b0b16] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakOrange text-white">JILI</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">5 PAYLINES</span>
+                </div>
+                <div class="flex items-center justify-center gap-1 my-auto group-hover:scale-110 transition">
+                  <span class="px-2 py-1 rounded bg-pakGold text-pakBg font-mono font-black text-sm shadow">A♠</span>
+                  <span class="px-2 py-1 rounded bg-pakCrimson text-white font-mono font-black text-sm shadow">K♦</span>
+                </div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">🔥 Golden Wild Cards</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Super Ace VIP</div>
+                  <div class="text-[9px] text-slate-400">Golden Empire Slot</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 6: Plinko VIP -->
+            <div data-cats="all hot mini" onclick="launchGameScreen('plinko')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#2b103d] via-[#181126] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakGold text-pakBg">M920 VIP</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">MAX 29X</span>
+                </div>
+                <svg class="w-16 h-12 mx-auto group-hover:scale-110 transition" viewBox="0 0 80 60" fill="none">
+                  <circle cx="40" cy="10" r="3.5" fill="#ffbe3b" />
+                  <circle cx="32" cy="22" r="3" fill="#ffe48f" />
+                  <circle cx="48" cy="22" r="3" fill="#ffe48f" />
+                  <circle cx="24" cy="34" r="3" fill="#ffe48f" />
+                  <circle cx="40" cy="34" r="3" fill="#ffe48f" />
+                  <circle cx="56" cy="34" r="3" fill="#ffe48f" />
+                  <rect x="14" y="45" width="14" height="9" rx="2" fill="#e62e3d" />
+                  <rect x="33" y="45" width="14" height="9" rx="2" fill="#16c784" />
+                  <rect x="52" y="45" width="14" height="9" rx="2" fill="#e62e3d" />
+                </svg>
+                <span class="text-[9px] font-mono text-purple-300 font-bold">🔺 Peg Pyramid Drop</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Plinko VIP</div>
+                  <div class="text-[9px] text-slate-400">Low / Med / High</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 7: Dragon vs Tiger -->
+            <div data-cats="all hot casino" onclick="launchGameScreen('dvst')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#470c14] via-[#2c1d09] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-rose-600 text-white">LIVE CASINO</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">8:1 TIE</span>
+                </div>
+                <div class="text-2xl text-center my-auto group-hover:scale-110 transition">🐉 <span class="text-xs font-black text-pakGold">VS</span> 🐅</div>
+                <span class="text-[9px] font-mono text-rose-300 font-bold">🔥 Fast Card Deal</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Dragon Tiger</div>
+                  <div class="text-[9px] text-slate-400">Live Card Arena</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 8: Andar Bahar -->
+            <div data-cats="all casino" onclick="launchGameScreen('andarbahar')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#3b121e] via-[#1c1326] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-rose-600 text-white">DESI LIVE</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">1.95X</span>
+                </div>
+                <div class="flex items-center justify-center gap-1.5 my-auto group-hover:scale-110 transition">
+                  <span class="px-2 py-1 rounded bg-sky-600 text-white font-mono font-black text-xs">A</span>
+                  <span class="px-2 py-1 rounded bg-pakGold text-pakBg font-mono font-black text-xs">JOKER</span>
+                  <span class="px-2 py-1 rounded bg-pakCrimson text-white font-mono font-black text-xs">B</span>
+                </div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">🃏 Classic Joker Deal</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Andar Bahar</div>
+                  <div class="text-[9px] text-slate-400">Alternating Card Deal</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 9: Roulette VIP -->
+            <div data-cats="all casino" onclick="launchGameScreen('roulette')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#0e3622] via-[#2b0f17] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakGold text-pakBg">EUROPEAN</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">36X ZERO</span>
+                </div>
+                <div class="text-3xl text-center my-auto group-hover:scale-110 transition">🎡</div>
+                <span class="text-[9px] font-mono text-pakGreen font-bold">🎯 Red / Black / Dozens</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Roulette VIP</div>
+                  <div class="text-[9px] text-slate-400">Spinning Wheel Table</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 10: 7 Up Down -->
+            <div data-cats="all mini" onclick="launchGameScreen('sevenup')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#3b2009] via-[#1d1426] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakOrange text-white">DICE</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">5X LUCKY 7</span>
+                </div>
+                <div class="text-2xl text-center my-auto group-hover:scale-110 transition">🎲 <span class="font-mono font-black text-pakGold">7</span> 🎲</div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">⬆️ 2–6 | 7 | 8–12 ⬇️</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">7 Up Down</div>
+                  <div class="text-[9px] text-slate-400">Dual Dice Roll</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 11: Limbo Rocket -->
+            <div data-cats="all crash mini" onclick="launchGameScreen('limbo')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#132645] via-[#261124] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-sky-500 text-pakBg">INSTANT</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">UP TO 100X</span>
+                </div>
+                <div class="text-3xl text-center my-auto group-hover:scale-110 transition">🚀</div>
+                <span class="text-[9px] font-mono text-sky-300 font-bold">⚡ Custom Target Mult</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Limbo Rocket</div>
+                  <div class="text-[9px] text-slate-400">Instant Rocket Meter</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 12: Mines Pro -->
+            <div data-cats="all mini" onclick="launchGameScreen('mines')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#1f1636] via-[#131829] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakGold text-pakBg">M920 ORIGINAL</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGreen">1–20 MINES</span>
+                </div>
+                <div class="text-2xl text-center my-auto group-hover:scale-110 transition">💎 💣 💎</div>
+                <span class="text-[9px] font-mono text-pakGoldLight font-bold">🔥 5x5 Gold Grid</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Mines Pro</div>
+                  <div class="text-[9px] text-slate-400">Instant Cash-Out</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+
+            <!-- Tile 13: Crash Dice -->
+            <div data-cats="all mini" onclick="launchGameScreen('crashdice')" class="game-tile group rounded-2xl overflow-hidden pak-card hover:border-pakGold/60 transition cursor-pointer flex flex-col">
+              <div class="h-28 bg-gradient-to-br from-[#241338] via-[#2b101d] to-[#0d0a12] p-2.5 relative flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] font-mono font-black px-1.5 py-0.5 rounded bg-pakCrimson text-white">PROVABLY FAIR</span>
+                  <span class="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/60 text-pakGold">0–100</span>
+                </div>
+                <div class="text-2xl text-center my-auto group-hover:scale-110 transition">🎯 <span class="font-mono font-black text-pakGreen">50.00</span></div>
+                <span class="text-[9px] font-mono text-emerald-300 font-bold">🎚️ Roll Over / Under</span>
+              </div>
+              <div class="p-2.5 bg-pakCard flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-black text-white">Crash Dice</div>
+                  <div class="text-[9px] text-slate-400">0–100 Slider Roll</div>
+                </div>
+                <span class="px-2 py-1 rounded-lg pak-fire-btn text-[10px] font-black">PLAY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Today's Earnings Chart / Live Leaderboard -->
+      <div class="pak-card rounded-2xl p-3.5 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs sm:text-sm font-black text-pakGoldLight flex items-center gap-1.5">
+            <span>🏅 Today's Earnings Chart</span>
+          </h3>
+          <span class="text-[10px] font-mono text-slate-400">Updated Live</span>
+        </div>
+        <div id="todaysLeaderboardList" class="space-y-1.5"></div>
+      </div>
+    </section>
+
+    <!-- ==================== GAME SCREENS (EMBEDDED SUB-VIEWS) ==================== -->
+
+    <!-- GAME A: AVIATOR (DUAL BET PANELS + AUTO CASH-OUT + LIVE BETS TABLE) -->
+    <section id="game-aviator" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">
+          ← Lobby
+        </button>
+        <span class="font-black text-sm text-pakGold">✈️ AVIATOR (SPRIBE STYLE)</span>
+        <span id="aviatorRoundBadge" class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-pakGreen/20 text-pakGreen border border-pakGreen/40">READY</span>
+      </div>
+
+      <!-- Top History Pill Bar (Blue / Purple / Pink Multiplier Badges) -->
+      <div id="aviatorTopHistoryBar" class="flex items-center gap-1.5 overflow-x-auto py-1"></div>
+
+      <!-- Red-and-Black Radar Trajectory Canvas -->
+      <div class="relative rounded-2xl overflow-hidden border border-pakCrimson/45 bg-[#09060c] h-52 sm:h-60">
+        <canvas id="aviatorFlightCanvas" class="w-full h-full block"></canvas>
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-3 text-center">
+          <div id="aviatorCenterMult" class="font-mono text-4xl sm:text-6xl font-black text-white drop-shadow-[0_0_20px_rgba(230,46,61,0.65)]">
+            1.00x
+          </div>
+          <div id="aviatorCenterSub" class="text-xs font-bold text-pakGoldLight mt-1">
+            Place Bet 1 or Bet 2 to Fly!
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Bet Panels (Bet 1 & Bet 2) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <!-- Bet Panel 1 -->
+        <div class="pak-card rounded-2xl p-3 space-y-2">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-black text-white">BET PANEL 1</span>
+            <label class="flex items-center gap-1 cursor-pointer text-pakGold">
+              <input type="checkbox" id="aviatorAutoBet1" class="accent-amber-400" />
+              <span>Auto Bet</span>
+            </label>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5">
+            <div>
+              <label class="text-[9px] text-slate-400 block">Stake (Rs.)</label>
+              <input type="number" id="aviatorStake1" min="10" step="10" value="200" class="w-full rounded-lg bg-black/50 border border-white/15 px-2.5 py-1.5 text-xs font-mono text-white" />
+            </div>
+            <div>
+              <label class="text-[9px] text-slate-400 block">Auto Cash-Out (x)</label>
+              <input type="number" id="aviatorAutoCash1" min="1.10" step="0.10" placeholder="2.00" class="w-full rounded-lg bg-black/50 border border-white/15 px-2.5 py-1.5 text-xs font-mono text-pakGold" />
+            </div>
+          </div>
+          <button type="button" id="aviatorBtn1" onclick="handleAviatorSlotAction(1)" class="w-full py-2.5 rounded-xl pak-fire-btn font-black text-xs uppercase cursor-pointer">
+            BET 200 PKR
+          </button>
+        </div>
+
+        <!-- Bet Panel 2 -->
+        <div class="pak-card rounded-2xl p-3 space-y-2">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-black text-white">BET PANEL 2</span>
+            <label class="flex items-center gap-1 cursor-pointer text-pakGold">
+              <input type="checkbox" id="aviatorAutoBet2" class="accent-amber-400" />
+              <span>Auto Bet</span>
+            </label>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5">
+            <div>
+              <label class="text-[9px] text-slate-400 block">Stake (Rs.)</label>
+              <input type="number" id="aviatorStake2" min="10" step="10" value="500" class="w-full rounded-lg bg-black/50 border border-white/15 px-2.5 py-1.5 text-xs font-mono text-white" />
+            </div>
+            <div>
+              <label class="text-[9px] text-slate-400 block">Auto Cash-Out (x)</label>
+              <input type="number" id="aviatorAutoCash2" min="1.10" step="0.10" placeholder="1.50" class="w-full rounded-lg bg-black/50 border border-white/15 px-2.5 py-1.5 text-xs font-mono text-pakGold" />
+            </div>
+          </div>
+          <button type="button" id="aviatorBtn2" onclick="handleAviatorSlotAction(2)" class="w-full py-2.5 rounded-xl pak-gold-btn font-black text-xs uppercase cursor-pointer">
+            BET 500 PKR
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulated Live Player Bets Table -->
+      <div class="pak-card rounded-2xl p-3 space-y-2">
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-black text-white">Live Room Bets (428 Players)</span>
+          <span class="font-mono text-pakGreen text-[11px]">Provably Fair</span>
+        </div>
+      <!-- Mode Tabs (Win Go 30s, Win Go 1Min, Win Go 3Min, Win Go 5Min) -->
+      <div class="grid grid-cols-4 gap-1.5 bg-pakCard p-1 rounded-2xl border border-white/10">
+        <button type="button" data-wingomode="30" onclick="switchWingoMode(30)" class="wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer text-slate-300">
+          Win Go 30s
+        </button>
+        <button type="button" data-wingomode="60" onclick="switchWingoMode(60)" class="wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer pak-fire-btn">
+          Win Go 1Min
+        </button>
+        <button type="button" data-wingomode="180" onclick="switchWingoMode(180)" class="wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer text-slate-300">
+          Win Go 3Min
+        </button>
+        <button type="button" data-wingomode="300" onclick="switchWingoMode(300)" class="wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer text-slate-300">
+          Win Go 5Min
+        </button>
+      </div>
+
+      <!-- Mode Tabs (Win Go 30s, Win Go 1Min, Win Go 3Min) -->
+      <div class="grid grid-cols-3 gap-1.5 bg-pakCard p-1 rounded-2xl border border-white/10">
+        <button type="button" data-wingomode="30" onclick="switchWingoMode(30)" class="wingo-mode-btn py-2 rounded-xl text-xs font-black cursor-pointer text-slate-300">
+          Win Go 30s
+        </button>
+        <button type="button" data-wingomode="60" onclick="switchWingoMode(60)" class="wingo-mode-btn py-2 rounded-xl text-xs font-black cursor-pointer pak-fire-btn">
+          Win Go 1Min
+        </button>
+        <button type="button" data-wingomode="180" onclick="switchWingoMode(180)" class="wingo-mode-btn py-2 rounded-xl text-xs font-black cursor-pointer text-slate-300">
+          Win Go 3Min
+        </button>
+      </div>
+
+      <!-- Period ID + Big Digital Countdown Card -->
+      <div class="rounded-2xl bg-gradient-to-r from-[#420c18] via-[#2b101b] to-[#3b1a09] border border-pakGold/35 p-3.5 flex items-center justify-between">
+        <div>
+          <span id="wingoModeBadge" class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-black/40 text-pakGoldLight">Win Go 1Min</span>
+          <div class="text-[11px] text-slate-300 mt-1">Period ID</div>
+          <div id="wingoPeriodNumber" class="font-mono text-sm sm:text-base font-black text-white">20261119105</div>
+        </div>
+        <div class="text-right">
+          <div class="text-[11px] text-pakGoldLight font-bold mb-1">Time Remaining</div>
+          <div id="wingoDigitalTimer" class="font-mono text-2xl sm:text-3xl font-black text-white tracking-widest bg-black/50 px-3 py-1 rounded-xl border border-pakGold/30">
+            01:00
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Big Join Green / Join Violet / Join Red Buttons -->
+      <div class="pak-card rounded-2xl p-3.5 space-y-3">
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="openWingoBetSlip('Color', 'Green', 2.0)" class="py-3 rounded-xl bg-pakGreen hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-lg shadow-pakGreen/25 cursor-pointer">
+            Join Green
+          </button>
+          <button type="button" onclick="openWingoBetSlip('Color', 'Violet', 4.5)" class="py-3 rounded-xl bg-pakViolet hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-lg shadow-pakViolet/25 cursor-pointer">
+            Join Violet
+          </button>
+          <button type="button" onclick="openWingoBetSlip('Color', 'Red', 2.0)" class="py-3 rounded-xl bg-pakCrimson hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-lg shadow-pakCrimson/25 cursor-pointer">
+            Join Red
+          </button>
+        </div>
+
+        <!-- 0-9 Glossy 3D Lottery Balls Grid -->
+        <div id="wingoBallsGrid" class="grid grid-cols-5 gap-2 py-1"></div>
+
+        <!-- Big / Small Buttons -->
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" onclick="openWingoBetSlip('Size', 'Big', 2.0)" class="py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-pakOrange text-white font-black text-xs sm:text-sm cursor-pointer">
+            Big (5–9) • 2x
+          </button>
+          <button type="button" onclick="openWingoBetSlip('Size', 'Small', 2.0)" class="py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-black text-xs sm:text-sm cursor-pointer">
+            Small (0–4) • 2x
+          </button>
+        </div>
+
+        <div id="wingoActiveTicketsBar" class="text-[11px] font-mono text-slate-400 bg-black/40 rounded-xl p-2 border border-white/5">
+          Tap any Color, Ball (0–9), or Big/Small to open Bet Slip.
+        </div>
+      </div>
+
+      <!-- Full Win Go Game History Table -->
+      <div class="pak-card rounded-2xl p-3.5 space-y-2">
+        <h3 class="text-xs font-black text-pakGoldLight uppercase">Game History</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs font-mono">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-400">
+                <th class="py-2 pr-2">Period</th>
+                <th class="py-2 pr-2">Number</th>
+                <th class="py-2 pr-2">Big/Small</th>
+                <th class="py-2">Color</th>
+              </tr>
+            </thead>
+            <tbody id="wingoHistoryTableBody" class="divide-y divide-white/5"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME C: FORTUNE GEMS 2 & SUPER ACE (JILI SLOTS) -->
+    <section id="game-gems" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">
+          ← Lobby
+        </button>
+        <span id="jiliSlotHeaderTitle" class="font-black text-sm text-pakGold">💎 FORTUNE GEMS 2 (JILI)</span>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-pakOrange text-white font-bold">JILI</span>
+      </div>
+
+      <!-- Gold Temple Frame -->
+      <div class="relative rounded-3xl bg-gradient-to-b from-[#3d2107] via-[#1c1018] to-[#0e0a12] border-2 border-pakGold p-4 space-y-3 overflow-hidden shadow-2xl">
+        <div id="coinShowerLayer" class="pointer-events-none absolute inset-0 overflow-hidden z-20"></div>
+
+        <div class="grid grid-cols-4 gap-2">
+          <!-- 3x3 Gem / Card Reels -->
+          <div class="col-span-3 grid grid-cols-3 gap-1.5">
+            <div id="gemCell-0" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>👑</span><span class="text-[8px] font-mono text-pakGold">CROWN</span></div>
+            <div id="gemCell-1" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>♦️</span><span class="text-[8px] font-mono text-rose-400">RUBY</span></div>
+            <div id="gemCell-2" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>💚</span><span class="text-[8px] font-mono text-emerald-400">EMERALD</span></div>
+
+            <div id="gemCell-3" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/50 flex flex-col items-center justify-center text-2xl"><span>⭐</span><span class="text-[8px] font-mono text-amber-300">WILD</span></div>
+            <div id="gemCell-4" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/50 flex flex-col items-center justify-center text-2xl"><span>💎</span><span class="text-[8px] font-mono text-sky-300">DIAMOND</span></div>
+            <div id="gemCell-5" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/50 flex flex-col items-center justify-center text-2xl"><span>👑</span><span class="text-[8px] font-mono text-pakGold">CROWN</span></div>
+
+            <div id="gemCell-6" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>💚</span><span class="text-[8px] font-mono text-emerald-400">EMERALD</span></div>
+            <div id="gemCell-7" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>♦️</span><span class="text-[8px] font-mono text-rose-400">RUBY</span></div>
+            <div id="gemCell-8" class="gem-reel-cell h-16 sm:h-20 rounded-xl bg-pakCard border border-pakGold/30 flex flex-col items-center justify-center text-2xl"><span>⭐</span><span class="text-[8px] font-mono text-amber-300">WILD</span></div>
+          </div>
+
+          <!-- 4th Multiplier Wheel (1x, 2x, 3x, 5x, 10x, 15x) -->
+          <div class="col-span-1 rounded-xl bg-gradient-to-b from-pakCrimson/40 via-pakGold/25 to-pakCrimson/40 border-2 border-pakGold p-2 flex flex-col items-center justify-between text-center">
+            <span class="text-[8px] font-mono font-black text-pakGoldLight uppercase">BONUS WHEEL</span>
+            <div id="gemWheelValue" class="font-mono text-2xl sm:text-3xl font-black text-pakGold drop-shadow-[0_0_10px_rgba(255,190,59,0.8)]">
+              5x
+            </div>
+            <span class="text-[8px] font-mono text-slate-200">1x–15x</span>
+          </div>
+        </div>
+
+        <div id="jiliSlotStatusLine" class="text-center font-mono text-xs font-extrabold text-pakGoldLight bg-black/55 py-2 rounded-xl border border-pakGold/25">
+          Match 3 in any row × Bonus Wheel!
+        </div>
+
+        <!-- Extra Bet, Turbo Spin & Spin Button -->
+        <div class="grid grid-cols-12 gap-2 items-center">
+          <div class="col-span-4">
+            <label class="text-[9px] text-slate-300 block">Bet (Rs.)</label>
+            <input type="number" id="jiliBetAmount" min="10" step="10" value="100" class="w-full rounded-xl bg-black/60 border border-white/15 px-2.5 py-2 text-xs font-mono text-white" />
+          </div>
+          <button type="button" id="jiliExtraBetBtn" onclick="toggleJiliExtraBet()" class="col-span-4 py-2.5 rounded-xl bg-pakSurface border border-white/15 text-[10px] font-extrabold text-slate-200 cursor-pointer">
+            🔥 Extra Bet: OFF
+          </button>
+          <button type="button" id="jiliTurboBtn" onclick="toggleJiliTurbo()" class="col-span-4 py-2.5 rounded-xl bg-pakSurface border border-white/15 text-[10px] font-extrabold text-slate-200 cursor-pointer">
+            ⚡ Turbo: OFF
+          </button>
+          <button type="button" onclick="spinJiliSlotMachine()" class="col-span-12 py-3 rounded-2xl pak-gold-btn font-black text-sm uppercase tracking-wider cursor-pointer">
+            🎰 SPIN REELS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME D: DRAGON VS TIGER -->
+    <section id="game-dvst" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">
+          ← Lobby
+        </button>
+        <span class="font-black text-sm text-pakGold">🐉 DRAGON VS TIGER</span>
+        <div id="dvstHistoryStrip" class="flex items-center gap-1"></div>
+      </div>
+
+      <div class="rounded-3xl bg-gradient-to-b from-[#3d0b14] via-[#1c1317] to-[#2e1e08] border-2 border-pakGold/40 p-4 space-y-4">
+        <div class="grid grid-cols-3 items-center text-center max-w-sm mx-auto">
+          <div class="space-y-1">
+            <div class="text-xs font-black text-rose-400">🐉 DRAGON</div>
+            <div id="dvstDragonCard" class="w-20 h-28 mx-auto rounded-2xl bg-pakCard border-2 border-rose-500 flex items-center justify-center font-mono text-2xl font-black text-white shadow-xl">?</div>
+          </div>
+          <div class="font-black text-xl text-pakGold italic">VS</div>
+          <div class="space-y-1">
+            <div class="text-xs font-black text-pakGold">🐅 TIGER</div>
+            <div id="dvstTigerCard" class="w-20 h-28 mx-auto rounded-2xl bg-pakCard border-2 border-pakGold flex items-center justify-center font-mono text-2xl font-black text-white shadow-xl">?</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="placeDvstChipOn('Dragon')" class="p-3 rounded-2xl bg-rose-950/80 border border-rose-400/50 text-center cursor-pointer">
+            <div class="text-xs font-black text-rose-300">DRAGON (2x)</div>
+            <div id="dvstStakeDragon" class="font-mono text-xs font-extrabold text-white mt-1">Rs. 0</div>
+          </button>
+          <button type="button" onclick="placeDvstChipOn('Tie')" class="p-3 rounded-2xl bg-emerald-950/80 border border-emerald-400/50 text-center cursor-pointer">
+            <div class="text-xs font-black text-emerald-300">TIE (8x)</div>
+            <div id="dvstStakeTie" class="font-mono text-xs font-extrabold text-white mt-1">Rs. 0</div>
+          </button>
+          <button type="button" onclick="placeDvstChipOn('Tiger')" class="p-3 rounded-2xl bg-amber-950/80 border border-pakGold/50 text-center cursor-pointer">
+            <div class="text-xs font-black text-pakGold">TIGER (2x)</div>
+            <div id="dvstStakeTiger" class="font-mono text-xs font-extrabold text-white mt-1">Rs. 0</div>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-1 flex-wrap">
+            <button type="button" data-dchip="10" onclick="pickDvstChip(10)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">10</button>
+            <button type="button" data-dchip="50" onclick="pickDvstChip(50)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">50</button>
+            <button type="button" data-dchip="100" onclick="pickDvstChip(100)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">100</button>
+            <button type="button" data-dchip="500" onclick="pickDvstChip(500)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">500</button>
+            <button type="button" data-dchip="1000" onclick="pickDvstChip(1000)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">1000</button>
+            <button type="button" data-dchip="5000" onclick="pickDvstChip(5000)" class="dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer">5000</button>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="resetDvstStakes()" class="px-3 py-2 rounded-xl bg-pakSurface text-xs font-bold text-slate-300 cursor-pointer">Clear</button>
+            <button type="button" onclick="revealDvstRound()" class="px-4 py-2 rounded-xl pak-gold-btn font-black text-xs uppercase cursor-pointer">🃏 Deal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME E: MINES PRO (5x5 GOLD STAR / BOMB GRID) -->
+    <section id="game-mines" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">
+          ← Lobby
+        </button>
+        <span class="font-black text-sm text-pakGold">💣 MINES PRO (M920 ORIGINAL)</span>
+        <span id="minesNextMultBadge" class="text-xs font-mono font-black text-pakGreen">Next: 1.15x</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-4 space-y-3">
+        <div id="minesGridBoard" class="grid grid-cols-5 gap-2 max-w-sm mx-auto"></div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-[10px] text-slate-400 block">Bet Amount (Rs.)</label>
+            <input type="number" id="minesStakeInput" min="10" step="10" value="100" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          </div>
+          <div>
+            <label class="text-[10px] text-slate-400 block">Mines Count (1–20)</label>
+            <input type="number" id="minesCountInput" min="1" max="20" value="3" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-pakGold" />
+          </div>
+        </div>
+
+        <button type="button" id="minesStartBtn" onclick="startNewMinesGame()" class="w-full py-3 rounded-2xl pak-fire-btn font-black text-xs sm:text-sm uppercase cursor-pointer">
+          💣 Start Mines Round
+        </button>
+        <button type="button" id="minesCashoutBtn" onclick="cashoutMinesGame()" class="hidden w-full py-3 rounded-2xl bg-pakGreen text-pakBg font-black text-xs sm:text-sm uppercase cursor-pointer">
+          💰 Cash Out (<span id="minesCurrentWinVal" class="font-mono">0</span> PKR)
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME F: JILI MONEY COMING (3-DIGIT CASH REEL + BONUS WHEEL) -->
+    <section id="game-moneycoming" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">💵 MONEY COMING (JILI)</span>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-pakOrange text-white font-bold">JILI</span>
+      </div>
+
+      <div class="rounded-3xl bg-gradient-to-b from-[#0f3b1e] via-[#261b08] to-[#0e0a12] border-2 border-pakGold p-4 space-y-3 shadow-2xl">
+        <div class="grid grid-cols-4 gap-2 text-center">
+          <div id="mcReel-0" class="mc-reel h-20 rounded-2xl bg-pakCard border-2 border-pakGold/50 flex items-center justify-center font-mono text-3xl font-black text-pakGold">1</div>
+          <div id="mcReel-1" class="mc-reel h-20 rounded-2xl bg-pakCard border-2 border-pakGold/50 flex items-center justify-center font-mono text-3xl font-black text-pakGold">0</div>
+          <div id="mcReel-2" class="mc-reel h-20 rounded-2xl bg-pakCard border-2 border-pakGold/50 flex items-center justify-center font-mono text-3xl font-black text-pakGold">0</div>
+          <div class="h-20 rounded-2xl bg-gradient-to-b from-pakCrimson/40 to-pakGold/30 border-2 border-pakGold flex flex-col items-center justify-center">
+            <span class="text-[8px] font-mono text-pakGoldLight">WHEEL</span>
+            <span id="mcWheelMult" class="font-mono text-2xl font-black text-pakGreen">2x</span>
+          </div>
+        </div>
+
+        <div id="mcStatusBanner" class="text-center font-mono text-xs font-extrabold text-pakGoldLight bg-black/55 py-2 rounded-xl border border-pakGold/25">
+          Read the 3 digits across (e.g. 1-0-0 = 100 PKR × Wheel)!
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 items-center">
+          <div>
+            <label class="text-[9px] text-slate-300 block">Bet Level (Rs.)</label>
+            <select id="mcStakeSelect" class="w-full rounded-xl bg-black/60 border border-white/15 px-2.5 py-2 text-xs font-mono text-white">
+              <option value="50">Rs. 50 (1x Scale)</option>
+              <option value="100" selected>Rs. 100 (2x Scale)</option>
+              <option value="500">Rs. 500 (10x Scale)</option>
+              <option value="1000">Rs. 1,000 (20x Scale)</option>
+            </select>
+          </div>
+          <button type="button" onclick="spinMoneyComing()" class="col-span-2 py-3 rounded-2xl pak-gold-btn font-black text-sm uppercase cursor-pointer">
+            💵 SPIN CASH REELS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME G: PLINKO VIP (ANIMATED PEG PYRAMID) -->
+    <section id="game-plinko" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🔺 PLINKO VIP</span>
+        <span id="plinkoLastResultBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-pakGreen/20 text-pakGreen border border-pakGreen/40">READY</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-3.5 space-y-3">
+        <div class="rounded-2xl bg-[#09060e] border border-pakGold/25 overflow-hidden">
+          <canvas id="plinkoPyramidCanvas" class="w-full h-56 block"></canvas>
+          <div id="plinkoBucketsRow" class="grid grid-cols-9 gap-1 px-2 pb-2 text-center font-mono text-[9px] sm:text-[10px] font-black"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-[10px] text-slate-400 block">Bet Amount (Rs.)</label>
+            <input type="number" id="plinkoStakeInput" min="10" step="10" value="100" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          </div>
+          <div>
+            <label class="text-[10px] text-slate-400 block">Risk Mode</label>
+            <select id="plinkoRiskSelect" onchange="renderPlinkoBuckets()" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-pakGold">
+              <option value="low">Low Risk (0.5x – 5.6x)</option>
+              <option value="medium" selected>Medium Risk (0.3x – 13x)</option>
+              <option value="high">High Risk (0.2x – 29x)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" onclick="dropPlinkoBall()" class="w-full py-3 rounded-2xl pak-fire-btn font-black text-sm uppercase cursor-pointer">
+          🔴 DROP PLINKO BALL
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME H: ANDAR BAHAR (CLASSIC JOKER DEAL) -->
+    <section id="game-andarbahar" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🃏 ANDAR BAHAR LIVE</span>
+        <span id="abStatusChip" class="text-[10px] font-mono px-2 py-0.5 rounded bg-pakGold/20 text-pakGold">1.95X PAYOUT</span>
+      </div>
+
+      <div class="rounded-3xl bg-gradient-to-b from-[#3b101d] via-[#191224] to-[#0e0a12] border-2 border-pakGold/40 p-4 space-y-3.5 text-center">
+        <div>
+          <div class="text-[10px] font-mono text-pakGoldLight uppercase mb-1">Main Joker Card</div>
+          <div id="abJokerCardBox" class="w-16 h-24 mx-auto rounded-2xl bg-pakCard border-2 border-pakGold flex items-center justify-center font-mono text-2xl font-black text-pakGold shadow-xl">
+            K♠
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-2xl bg-sky-950/60 border border-sky-400/40 p-3 space-y-1.5">
+            <div class="text-xs font-black text-sky-300">ANDAR (A)</div>
+            <div id="abAndarCardBox" class="w-14 h-20 mx-auto rounded-xl bg-pakCard border border-sky-400/40 flex items-center justify-center font-mono text-lg font-black text-white">?</div>
+          </div>
+          <div class="rounded-2xl bg-rose-950/60 border border-rose-400/40 p-3 space-y-1.5">
+            <div class="text-xs font-black text-rose-300">BAHAR (B)</div>
+            <div id="abBaharCardBox" class="w-14 h-20 mx-auto rounded-xl bg-pakCard border border-rose-400/40 flex items-center justify-center font-mono text-lg font-black text-white">?</div>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-slate-300 block mb-1">Stake Amount (Rs.)</label>
+          <input type="number" id="abStakeInput" min="10" step="10" value="200" class="w-40 mx-auto block text-center rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5">
+          <button type="button" onclick="playAndarBaharRound('Andar')" class="py-3 rounded-2xl bg-sky-600 hover:brightness-110 text-white font-black text-xs sm:text-sm uppercase cursor-pointer">
+            Bet Andar (1.95x)
+          </button>
+          <button type="button" onclick="playAndarBaharRound('Bahar')" class="py-3 rounded-2xl pak-fire-btn font-black text-xs sm:text-sm uppercase cursor-pointer">
+            Bet Bahar (1.95x)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME I: ROULETTE VIP (SPINNING WHEEL + TABLE BETS) -->
+    <section id="game-roulette" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🎡 ROULETTE VIP</span>
+        <span id="roulLastNumBadge" class="text-xs font-mono font-black px-2.5 py-0.5 rounded-full bg-pakGreen text-pakBg">0</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-4 space-y-3">
+        <div class="flex items-center justify-center py-1">
+          <div id="rouletteWheelRing" class="w-36 h-36 rounded-full border-4 border-pakGold bg-[conic-gradient(#16c784_0deg_15deg,#e62e3d_15deg_45deg,#15111b_45deg_75deg,#e62e3d_75deg_105deg,#15111b_105deg_135deg,#e62e3d_135deg_165deg,#15111b_165deg_195deg,#e62e3d_195deg_225deg,#15111b_225deg_255deg,#e62e3d_255deg_285deg,#15111b_285deg_315deg,#e62e3d_315deg_345deg,#15111b_345deg_360deg)] flex items-center justify-center shadow-2xl transition-transform duration-1000">
+            <div class="w-20 h-20 rounded-full bg-pakBg border-2 border-pakGoldLight flex flex-col items-center justify-center">
+              <span class="text-[9px] text-slate-400">LANDED</span>
+              <span id="roulCenterNumber" class="font-mono text-2xl font-black text-pakGold">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-1.5 text-xs font-black">
+          <button type="button" data-rbet="Zero" onclick="selectRouletteBet('Zero', 36)" class="roul-bet-btn py-2.5 rounded-xl bg-pakGreen/25 border border-pakGreen text-pakGreen cursor-pointer">0 (36x)</button>
+          <button type="button" data-rbet="Red" onclick="selectRouletteBet('Red', 2)" class="roul-bet-btn py-2.5 rounded-xl bg-pakCrimson text-white cursor-pointer">RED (2x)</button>
+          <button type="button" data-rbet="Black" onclick="selectRouletteBet('Black', 2)" class="roul-bet-btn py-2.5 rounded-xl bg-slate-800 border border-white/20 text-white cursor-pointer">BLACK (2x)</button>
+          <button type="button" data-rbet="Even" onclick="selectRouletteBet('Even', 2)" class="roul-bet-btn py-2.5 rounded-xl bg-pakSurface border border-white/15 text-slate-200 cursor-pointer">EVEN (2x)</button>
+          <button type="button" data-rbet="Odd" onclick="selectRouletteBet('Odd', 2)" class="roul-bet-btn py-2.5 rounded-xl bg-pakSurface border border-white/15 text-slate-200 cursor-pointer">ODD (2x)</button>
+          <button type="button" data-rbet="1-12" onclick="selectRouletteBet('1-12', 3)" class="roul-bet-btn py-2.5 rounded-xl bg-pakSurface border border-white/15 text-pakGold cursor-pointer">1–12 (3x)</button>
+          <button type="button" data-rbet="13-24" onclick="selectRouletteBet('13-24', 3)" class="roul-bet-btn py-2.5 rounded-xl bg-pakSurface border border-white/15 text-pakGold cursor-pointer">13–24 (3x)</button>
+          <button type="button" data-rbet="25-36" onclick="selectRouletteBet('25-36', 3)" class="roul-bet-btn py-2.5 rounded-xl bg-pakSurface border border-white/15 text-pakGold cursor-pointer">25–36 (3x)</button>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 items-center">
+          <div>
+            <label class="text-[9px] text-slate-400 block">Stake (Rs.)</label>
+            <input type="number" id="roulStakeInput" min="10" step="10" value="100" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          </div>
+          <button type="button" onclick="spinRouletteVip()" class="col-span-2 py-3 rounded-2xl pak-gold-btn font-black text-xs sm:text-sm uppercase cursor-pointer">
+            🎡 SPIN ROULETTE (<span id="roulSelectedLabel">RED</span>)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME J: 7 UP DOWN (DUAL 3D DICE) -->
+    <section id="game-sevenup" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🎲 7 UP DOWN DICE</span>
+        <span id="sevenUpSumBadge" class="text-xs font-mono font-black text-pakGreen">Sum: 7</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-4 space-y-4 text-center">
+        <div class="flex items-center justify-center gap-4 py-2">
+          <div id="diceFaceA" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-white to-slate-300 text-pakBg font-mono text-3xl font-black flex items-center justify-center shadow-xl">3</div>
+          <div id="diceFaceB" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-white to-slate-300 text-pakBg font-mono text-3xl font-black flex items-center justify-center shadow-xl">4</div>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-slate-400 block mb-1">Bet Amount (Rs.)</label>
+          <input type="number" id="sevenUpStakeInput" min="10" step="10" value="100" class="w-40 mx-auto block text-center rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="rollSevenUpDown('Down')" class="py-3 rounded-2xl bg-sky-600 text-white font-black text-xs cursor-pointer">
+            2–6 DOWN<br/><span class="font-mono text-[10px]">2.0x</span>
+          </button>
+          <button type="button" onclick="rollSevenUpDown('Seven')" class="py-3 rounded-2xl pak-gold-btn font-black text-xs cursor-pointer">
+            LUCKY 7<br/><span class="font-mono text-[10px]">5.0x</span>
+          </button>
+          <button type="button" onclick="rollSevenUpDown('Up')" class="py-3 rounded-2xl pak-fire-btn font-black text-xs cursor-pointer">
+            8–12 UP<br/><span class="font-mono text-[10px]">2.0x</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME K: LIMBO ROCKET (INSTANT TARGET MULTIPLIER) -->
+    <section id="game-limbo" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🚀 LIMBO ROCKET</span>
+        <span id="limboWinChanceBadge" class="text-[10px] font-mono text-pakGreen">Chance: 48.0%</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-4 space-y-4 text-center">
+        <div class="py-4 rounded-2xl bg-black/55 border border-pakGold/30">
+          <div class="text-3xl mb-1">🚀</div>
+          <div id="limboResultMult" class="font-mono text-4xl sm:text-5xl font-black text-pakGold">2.45x</div>
+          <div id="limboResultSub" class="text-[11px] text-slate-400 mt-1">Beat your Target Multiplier to win!</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5 text-left">
+          <div>
+            <label class="text-[10px] text-slate-400 block">Bet Amount (Rs.)</label>
+            <input type="number" id="limboStakeInput" min="10" step="10" value="100" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          </div>
+          <div>
+            <label class="text-[10px] text-slate-400 block">Target Multiplier (1.10x – 100x)</label>
+            <input type="number" id="limboTargetInput" min="1.10" max="100" step="0.10" value="2.00" oninput="updateLimboChanceLabel()" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-pakGold" />
+          </div>
+        </div>
+
+        <button type="button" onclick="launchLimboRocket()" class="w-full py-3 rounded-2xl pak-fire-btn font-black text-sm uppercase cursor-pointer">
+          🚀 LAUNCH LIMBO ROCKET
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME L: CRASH DICE (0-100 OVER / UNDER SLIDER) -->
+    <section id="game-crashdice" class="game-subview hidden space-y-3">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="backToLobby()" class="px-3 py-1.5 rounded-xl bg-pakSurface border border-white/10 text-xs font-extrabold text-slate-200 cursor-pointer">← Lobby</button>
+        <span class="font-black text-sm text-pakGold">🎯 CRASH DICE (0–100)</span>
+        <span id="cdicePayoutBadge" class="text-xs font-mono font-black text-pakGold">Payout: 1.96x</span>
+      </div>
+
+      <div class="pak-card rounded-3xl p-4 space-y-4">
+        <div class="text-center py-3 rounded-2xl bg-black/55 border border-white/10">
+          <div class="text-[10px] text-slate-400 uppercase">Rolled Result</div>
+          <div id="cdiceRolledNum" class="font-mono text-4xl font-black text-pakGreen">64.20</div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-mono">
+            <span>Target Threshold: <strong id="cdiceThresholdVal" class="text-pakGold">50</strong></span>
+            <span>Win Chance: <strong id="cdiceWinChanceVal" class="text-pakGreen">50%</strong></span>
+          </div>
+          <input type="range" id="cdiceSlider" min="5" max="95" value="50" oninput="updateCrashDiceMath()" class="w-full accent-amber-400" />
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 items-center">
+          <div>
+            <label class="text-[9px] text-slate-400 block">Stake (Rs.)</label>
+            <input type="number" id="cdiceStakeInput" min="10" step="10" value="100" class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          </div>
+          <button type="button" onclick="rollCrashDice('Under')" class="py-3 rounded-2xl bg-sky-600 text-white font-black text-xs uppercase cursor-pointer">
+            Roll Under
+          </button>
+          <button type="button" onclick="rollCrashDice('Over')" class="py-3 rounded-2xl pak-gold-btn font-black text-xs uppercase cursor-pointer">
+            Roll Over
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: PROMOTION / AGENCY HUB (33573351660) ==================== -->
+    <section id="tab-promotion" class="main-tab-section hidden space-y-3.5">
+      <div class="rounded-3xl bg-gradient-to-br from-[#470d1a] via-[#26111c] to-[#3d1c0a] border border-pakGold/40 p-4 sm:p-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-pakGold/20 text-pakGold border border-pakGold/40">M920 PARTNER AGENCY</span>
+            <h2 class="text-lg font-black text-white mt-1">Agency Commission Dashboard</h2>
+          </div>
+          <div class="text-right">
+            <div class="text-[10px] text-slate-300">Today's Commission</div>
+            <div id="agencyTodayComm" class="font-mono text-xl font-black text-pakGold">Rs. 1,500.00</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 text-center">
+          <div class="rounded-2xl bg-black/45 border border-white/10 p-2.5">
+            <div class="text-[10px] text-slate-400">Direct Subordinates</div>
+            <div id="agencyDirectCount" class="font-mono text-base font-black text-white mt-0.5">14</div>
+          </div>
+          <div class="rounded-2xl bg-black/45 border border-white/10 p-2.5">
+            <div class="text-[10px] text-slate-400">Team Bet Volume</div>
+            <div id="agencyTeamVolume" class="font-mono text-base font-black text-pakGreen mt-0.5">Rs. 84,500</div>
+          </div>
+          <div class="rounded-2xl bg-black/45 border border-white/10 p-2.5">
+            <div class="text-[10px] text-slate-400">Invite Reward</div>
+            <div class="font-mono text-base font-black text-pakGold mt-0.5">Rs. 500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Official Referral Code & Invite Link Box -->
+      <div class="pak-card rounded-2xl p-4 space-y-3">
+        <div class="rounded-xl bg-black/50 border border-pakGold/35 p-3 flex items-center justify-between gap-2">
+          <div>
+            <div class="text-[10px] text-slate-400 uppercase">Official Referral Code</div>
+            <div class="font-mono text-lg font-black text-pakGold">33573351660</div>
+          </div>
+          <button type="button" onclick="copyTextValue('33573351660', 'Referral Code 33573351660 Copied!')" class="px-3.5 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">
+            Copy Code
+          </button>
+        </div>
+
+        <div class="rounded-xl bg-black/50 border border-white/10 p-3 flex items-center justify-between gap-2">
+          <div class="min-w-0">
+            <div class="text-[10px] text-slate-400 uppercase">Official Invite Link</div>
+            <div class="font-mono text-xs text-slate-200 truncate">https://pakvip0.com/#/register?invitationCode=33573351660</div>
+          </div>
+          <button type="button" onclick="copyTextValue('https://pakvip0.com/#/register?invitationCode=33573351660', 'Invite Link Copied!')" class="px-3.5 py-2 rounded-xl pak-fire-btn font-black text-xs cursor-pointer shrink-0">
+            Copy &amp; Share
+          </button>
+        </div>
+
+        <!-- Tier 1 / Tier 2 / Tier 3 Rebate Breakdown -->
+        <div class="space-y-1.5">
+          <div class="text-xs font-black text-pakGoldLight">3-Tier Agency Rebate Structure</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
+            <div class="rounded-xl bg-pakSurface p-2.5 border border-pakGold/25">
+              <div class="text-slate-400 text-[10px]">Tier 1 (Direct)</div>
+              <div class="font-black text-pakGold text-sm mt-0.5">1.50%</div>
+            </div>
+            <div class="rounded-xl bg-pakSurface p-2.5 border border-white/10">
+              <div class="text-slate-400 text-[10px]">Tier 2 Team</div>
+              <div class="font-black text-pakOrange text-sm mt-0.5">0.75%</div>
+            </div>
+            <div class="rounded-xl bg-pakSurface p-2.5 border border-white/10">
+              <div class="text-slate-400 text-[10px]">Tier 3 Team</div>
+              <div class="font-black text-pakGreen text-sm mt-0.5">0.35%</div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" onclick="simulateReferralInviteJoin()" class="w-full py-3 rounded-2xl pak-gold-btn font-black text-xs uppercase cursor-pointer">
+          + Simulate Subordinate Join (+Rs. 500 Commission)
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: WALLET (EASYPAISA & JAZZCASH) ==================== -->
+    <section id="tab-wallet" class="main-tab-section hidden space-y-3.5">
+      <!-- Total Balance Card with Refresh Icon -->
+      <div class="rounded-3xl bg-gradient-to-r from-[#3f0c18] via-[#231222] to-[#3a1d08] border border-pakGold/40 p-4 sm:p-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-xs text-pakGoldLight font-bold flex items-center gap-1.5">
+              <span>Total Wallet Balance</span>
+              <button type="button" onclick="refreshWalletDisplay()" class="px-1.5 py-0.5 rounded bg-black/40 text-pakGold text-[11px] cursor-pointer" title="Refresh Balance">🔄</button>
+            </div>
+            <div id="walletMainBalance" class="font-mono text-2xl sm:text-3xl font-black text-white mt-1">Rs. 5,000.00</div>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" id="wTabDepBtn" onclick="toggleWalletSubView('deposit')" class="px-3.5 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">
+              Deposit
+            </button>
+            <button type="button" id="wTabWitBtn" onclick="toggleWalletSubView('withdraw')" class="px-3.5 py-2 rounded-xl pak-fire-btn font-black text-xs cursor-pointer">
+              Withdraw
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPOSIT FORM (EASYPAISA / JAZZCASH) -->
+      <form id="walletDepositSection" onsubmit="submitPakDeposit(event)" class="pak-card rounded-2xl p-4 space-y-3">
+        <div class="grid grid-cols-2 gap-2.5">
+          <button type="button" id="depCardEp" onclick="chooseWalletMethod('deposit', 'EasyPaisa')" class="p-3 rounded-2xl border-2 border-pakGreen bg-emerald-950/60 text-left cursor-pointer">
+            <div class="text-xs font-black text-pakGreen">EasyPaisa</div>
+            <div class="text-[10px] text-slate-300">Fast Mobile Top-Up</div>
+          </button>
+          <button type="button" id="depCardJc" onclick="chooseWalletMethod('deposit', 'JazzCash')" class="p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer">
+            <div class="text-xs font-black text-pakCrimson">JazzCash</div>
+            <div class="text-[10px] text-slate-300">24/7 Instant Transfer</div>
+          </button>
+        </div>
+
+        <div class="rounded-xl bg-black/50 border border-pakGold/30 p-3 flex items-center justify-between gap-2">
+          <div>
+            <div class="text-[10px] text-slate-400">Official <span id="depActiveMethodName" class="text-pakGold font-bold">EasyPaisa</span> Account</div>
+            <div id="depAccountNumberDisplay" class="font-mono text-base font-black text-white">0345-1234567</div>
+            <div class="text-[11px] text-slate-300">Title: <strong id="depAccountTitleDisplay" class="text-pakGoldLight">M920 Official</strong></div>
+          </div>
+          <button type="button" onclick="copyReceivingAccountNum()" class="px-3 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">
+            Copy No.
+          </button>
+        </div>
+
+        <!-- Quick Amount Chips -->
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Select Deposit Amount (PKR)</label>
+          <div class="grid grid-cols-3 gap-1.5 mb-2">
+            <button type="button" onclick="setInputNumber('depAmountField', 300)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">Rs. 300</button>
+            <button type="button" onclick="setInputNumber('depAmountField', 500)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">Rs. 500</button>
+            <button type="button" onclick="setInputNumber('depAmountField', 1000)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">Rs. 1,000</button>
+            <button type="button" onclick="setInputNumber('depAmountField', 3000)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">Rs. 3,000</button>
+            <button type="button" onclick="setInputNumber('depAmountField', 5000)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">Rs. 5,000</button>
+            <button type="button" onclick="setInputNumber('depAmountField', 10000)" class="py-1.5 rounded-xl bg-pakSurface font-mono text-xs font-bold text-pakGold cursor-pointer">Rs. 10,000</button>
+          </div>
+          <input type="number" id="depAmountField" min="100" step="50" value="1000" required class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2.5 text-sm font-mono text-white" />
+        </div>
+
+        <div>
+          <label for="depTidInput" class="block text-xs font-bold text-slate-300 mb-1">Transaction ID (TID)</label>
+          <input type="text" id="depTidInput" placeholder="Enter 11-digit EasyPaisa / JazzCash TID" required class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2.5 text-sm font-mono text-white" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-2xl pak-gold-btn font-black text-sm uppercase cursor-pointer">
+          Submit Deposit Request
+        </button>
+      </form>
+
+      <!-- WITHDRAW FORM -->
+      <form id="walletWithdrawSection" onsubmit="submitPakWithdraw(event)" class="hidden pak-card rounded-2xl p-4 space-y-3">
+        <div class="grid grid-cols-2 gap-2.5">
+          <button type="button" id="witCardEp" onclick="chooseWalletMethod('withdraw', 'EasyPaisa')" class="p-3 rounded-2xl border-2 border-pakGreen bg-emerald-950/60 text-left cursor-pointer">
+            <div class="text-xs font-black text-pakGreen">EasyPaisa Payout</div>
+            <div class="text-[10px] text-slate-300">Fast Mobile Wallet</div>
+          </button>
+          <button type="button" id="witCardJc" onclick="chooseWalletMethod('withdraw', 'JazzCash')" class="p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer">
+            <div class="text-xs font-black text-pakCrimson">JazzCash Payout</div>
+            <div class="text-[10px] text-slate-300">Direct Account Transfer</div>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label for="witNameInput" class="block text-xs font-bold text-slate-300 mb-1">Account Holder Name</label>
+            <input type="text" id="witNameInput" placeholder="e.g. Muhammad Bilal" required class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2.5 text-sm text-white" />
+          </div>
+          <div>
+            <label for="witNumberInput" class="block text-xs font-bold text-slate-300 mb-1">Mobile Wallet Number</label>
+            <input type="text" id="witNumberInput" placeholder="03XXXXXXXXX" required class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2.5 text-sm font-mono text-white" />
+          </div>
+        </div>
+
+        <div>
+          <label for="witAmountField" class="block text-xs font-bold text-slate-300 mb-1">Withdrawal Amount (PKR)</label>
+          <input type="number" id="witAmountField" min="200" step="50" placeholder="Minimum Rs. 200" required class="w-full rounded-xl bg-black/55 border border-white/15 px-3 py-2.5 text-sm font-mono text-white" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-2xl pak-fire-btn font-black text-sm uppercase cursor-pointer">
+          Submit Withdrawal Request
+        </button>
+      </form>
+
+      <!-- Live Transaction Status History -->
+      <div class="pak-card rounded-2xl p-4 space-y-2.5">
+        <h3 class="text-xs sm:text-sm font-black text-white">📜 Transaction Status History</h3>
+        <div id="pakTxHistoryList" class="space-y-2"></div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: ACCOUNT & SUPER ADMIN ACCESS ==================== -->
+    <section id="tab-account" class="main-tab-section hidden space-y-3.5">
+      <div class="rounded-3xl bg-gradient-to-r from-[#3f0c18] via-[#211224] to-[#3a1d08] border border-pakGold/35 p-4 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl pak-gold-btn flex items-center justify-center text-2xl font-black">👑</div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-black text-base text-white">M920_VIP_786</span>
+              <span id="accountVipBadge" class="text-[10px] font-mono font-extrabold px-2 py-0.5 rounded-full bg-pakGold text-pakBg">VIP 3</span>
+            </div>
+            <div class="text-xs font-mono text-slate-300">UID: 920335733 | Ref: 33573351660</div>
+          </div>
+        </div>
+        <button type="button" onclick="openSuperAdminPinPrompt()" class="px-3.5 py-2.5 rounded-xl pak-fire-btn font-black text-xs cursor-pointer">
+          ⚙️ Admin Control
+        </button>
+      </div>
+
+      <!-- VIP 1-10 Privilege Levels Strip -->
+      <div class="pak-card rounded-2xl p-3.5 space-y-2">
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-black text-pakGoldLight">👑 VIP 1 – VIP 10 Privilege Levels</span>
+          <span class="font-mono text-[10px] text-pakGreen">Current: VIP 3 (0.8% Rebate)</span>
+        </div>
+        <div class="flex gap-1.5 overflow-x-auto pb-1 font-mono text-[10px]">
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 1 • 0.3%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 2 • 0.5%</span>
+          <span class="px-2.5 py-1.5 rounded-xl pak-gold-btn font-black shrink-0">VIP 3 • 0.8%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 4 • 1.0%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 5 • 1.2%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 6 • 1.5%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 7 • 1.8%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 8 • 2.2%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-white/10 shrink-0">VIP 9 • 2.5%</span>
+          <span class="px-2.5 py-1.5 rounded-xl bg-pakSurface border border-pakGold/40 text-pakGold shrink-0">VIP 10 • 3.0%</span>
+        </div>
+      </div>
+
+      <!-- Account Quick Menu Grid -->
+      <div class="pak-card rounded-2xl p-3.5 grid grid-cols-2 gap-2.5 text-xs">
+        <button type="button" onclick="switchBottomTab('wallet')" class="p-3 rounded-xl bg-pakSurface hover:border-pakGold/40 border border-white/10 text-left font-bold text-white cursor-pointer">
+          💳 Deposit &amp; Withdraw
+        </button>
+        <button type="button" onclick="switchBottomTab('promotion')" class="p-3 rounded-xl bg-pakSurface hover:border-pakGold/40 border border-white/10 text-left font-bold text-white cursor-pointer">
+          🤝 Agency Referral Hub
+        </button>
+        <button type="button" onclick="openLuckyWheelModal()" class="p-3 rounded-xl bg-pakSurface hover:border-pakGold/40 border border-white/10 text-left font-bold text-white cursor-pointer">
+          🎡 VIP Lucky Spin
+        </button>
+        <button type="button" onclick="openSuperAdminPinPrompt()" class="p-3 rounded-xl bg-pakCrimson/20 hover:bg-pakCrimson/30 border border-pakCrimson/50 text-left font-black text-pakGoldLight cursor-pointer">
+          🔐 Super Admin Panel (PIN: 1234)
+        </button>
+      </div>
+    </section>
+
+    <footer class="text-center text-[10px] text-slate-500 pt-2">
+      M920 VIP Interactive iGaming &amp; Color Prediction Prototype — Virtual PKR credits for demonstration &amp; testing only.
+    </footer>
+  </main>
+
+  <!-- ==================== 4. AUTHENTIC 5-TAB BOTTOM BAR (ELEVATED CENTER PROMOTION) ==================== -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-[#120d18]/95 backdrop-blur-xl border-t border-pakGold/25">
+    <div class="max-w-3xl mx-auto grid grid-cols-5 items-end py-1.5 px-1">
+      <button type="button" data-btab="home" onclick="switchBottomTab('home')" class="pak-bnav flex flex-col items-center justify-center py-1 text-pakGold cursor-pointer">
+        <span class="text-base leading-none">🏠</span>
+        <span class="text-[10px] font-extrabold mt-1">Home</span>
+      </button>
+      <button type="button" data-btab="activity" onclick="switchBottomTab('activity')" class="pak-bnav flex flex-col items-center justify-center py-1 text-slate-400 cursor-pointer">
+        <span class="text-base leading-none">🎁</span>
+        <span class="text-[10px] font-extrabold mt-1">Activity</span>
+      </button>
+
+      <!-- Elevated Center Diamond Promotion Button -->
+      <div class="flex flex-col items-center justify-center -mt-5">
+        <button
+          type="button"
+          data-btab="promotion"
+          onclick="switchBottomTab('promotion')"
+          class="w-12 h-12 rounded-2xl rotate-45 pak-fire-btn border-2 border-pakGoldLight flex items-center justify-center shadow-xl cursor-pointer"
+          title="Promotion & Agency"
+        >
+          <span class="-rotate-45 text-lg">💎</span>
+        </button>
+        <span class="text-[10px] font-extrabold text-pakGoldLight mt-1.5">Promotion</span>
+      </div>
+
+      <button type="button" data-btab="wallet" onclick="switchBottomTab('wallet')" class="pak-bnav flex flex-col items-center justify-center py-1 text-slate-400 cursor-pointer">
+        <span class="text-base leading-none">💳</span>
+        <span class="text-[10px] font-extrabold mt-1">Wallet</span>
+      </button>
+      <button type="button" data-btab="account" onclick="switchBottomTab('account')" class="pak-bnav flex flex-col items-center justify-center py-1 text-slate-400 cursor-pointer">
+        <span class="text-base leading-none">👤</span>
+        <span class="text-[10px] font-extrabold mt-1">Account</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== MODALS: WIN GO BET SLIP, LUCKY WHEEL, CHECK-IN, SUPPORT, SUPER ADMIN ==================== -->
+
+  <!-- Win Go Bet Slip Modal -->
+  <div id="wingoSlipModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-3">
+    <div class="w-full max-w-md pak-card rounded-3xl p-4 space-y-3 border border-pakGold/45">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-black text-white">Win Go Bet Slip — <span id="slipChoiceLabel" class="text-pakGold">Green (2x)</span></h3>
+        <button type="button" onclick="closeWingoBetSlip()" class="w-7 h-7 rounded-full bg-pakSurface text-slate-300 cursor-pointer">✕</button>
+      </div>
+      <div>
+        <div class="text-[11px] text-slate-400 mb-1">Base Balance (Rs.)</div>
+        <div class="grid grid-cols-4 gap-1.5">
+          <button type="button" onclick="setSlipBase(10)" class="slip-base-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">10</button>
+          <button type="button" onclick="setSlipBase(100)" class="slip-base-btn py-1.5 rounded-lg pak-gold-btn font-mono text-xs font-black cursor-pointer">100</button>
+          <button type="button" onclick="setSlipBase(1000)" class="slip-base-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">1000</button>
+          <button type="button" onclick="setSlipBase(5000)" class="slip-base-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">5000</button>
+        </div>
+      </div>
+      <div>
+        <div class="text-[11px] text-slate-400 mb-1">Multiplier</div>
+        <div class="grid grid-cols-4 gap-1.5">
+          <button type="button" onclick="setSlipMult(1)" class="slip-mult-btn py-1.5 rounded-lg pak-fire-btn font-mono text-xs font-black cursor-pointer">x1</button>
+          <button type="button" onclick="setSlipMult(5)" class="slip-mult-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">x5</button>
+          <button type="button" onclick="setSlipMult(10)" class="slip-mult-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">x10</button>
+          <button type="button" onclick="setSlipMult(50)" class="slip-mult-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer">x50</button>
+        </div>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-white/10">
+        <div class="text-xs text-slate-300">Total Bet: <strong id="slipTotalStakeText" class="font-mono text-pakGold">Rs. 100</strong></div>
+        <button type="button" onclick="confirmWingoBetSlip()" class="px-5 py-2.5 rounded-xl pak-gold-btn font-black text-xs uppercase cursor-pointer">
+          Confirm Bet
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucky Wheel Modal -->
+  <div id="luckyWheelModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-sm pak-card rounded-3xl p-5 text-center space-y-4 border border-pakGold/45">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-black text-pakGold">🎡 VIP Lucky Spin Wheel</h3>
+        <button type="button" onclick="document.getElementById('luckyWheelModal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-pakSurface text-slate-300 cursor-pointer">✕</button>
+      </div>
+      <div id="wheelDisc" class="w-44 h-44 mx-auto rounded-full border-4 border-pakGold bg-gradient-to-tr from-pakCrimson via-pakOrange to-pakGold flex items-center justify-center shadow-2xl transition-transform duration-1000">
+        <div class="w-28 h-28 rounded-full bg-pakBg border-2 border-pakGoldLight flex flex-col items-center justify-center">
+          <span class="text-2xl">🎁</span>
+          <span id="wheelPrizeText" class="font-mono text-xs font-black text-pakGold mt-1">SPIN TO WIN</span>
+        </div>
+      </div>
+      <button type="button" onclick="spinLuckyWheel()" class="w-full py-3 rounded-2xl pak-gold-btn font-black text-sm uppercase cursor-pointer">
+        Spin Free Daily Wheel
+      </button>
+    </div>
+  </div>
+
+  <!-- 7-Day Daily Check-In Modal -->
+  <div id="checkinModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-sm pak-card rounded-3xl p-5 space-y-4 border border-pakGold/45">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-black text-pakGold">📅 7-Day VIP Check-In</h3>
+        <button type="button" onclick="document.getElementById('checkinModal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-pakSurface text-slate-300 cursor-pointer">✕</button>
+      </div>
+      <div class="grid grid-cols-4 gap-2 text-center text-xs font-mono">
+        <div class="p-2 rounded-xl bg-pakGreen/20 border border-pakGreen text-pakGreen font-bold">Day 1<br/>+50</div>
+        <div class="p-2 rounded-xl bg-pakGreen/20 border border-pakGreen text-pakGreen font-bold">Day 2<br/>+100</div>
+        <div class="p-2 rounded-xl bg-pakGold/20 border border-pakGold text-pakGold font-black">Day 3<br/>+200</div>
+        <div class="p-2 rounded-xl bg-pakSurface border border-white/10 text-slate-400">Day 4<br/>+300</div>
+        <div class="p-2 rounded-xl bg-pakSurface border border-white/10 text-slate-400">Day 5<br/>+500</div>
+        <div class="p-2 rounded-xl bg-pakSurface border border-white/10 text-slate-400">Day 6<br/>+800</div>
+        <div class="col-span-2 p-2 rounded-xl bg-pakCrimson/20 border border-pakCrimson text-pakGoldLight font-black">Day 7 Mega<br/>+Rs. 2,000</div>
+      </div>
+      <button type="button" onclick="claimDailyCheckin()" class="w-full py-3 rounded-2xl pak-fire-btn font-black text-sm uppercase cursor-pointer">
+        Claim Day 3 Reward (+Rs. 200)
+      </button>
+    </div>
+  </div>
+
+  <!-- Customer Support Modal -->
+  <div id="supportModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-sm pak-card rounded-3xl p-5 space-y-3 border border-pakGold/45">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-black text-white">🎧 24/7 VIP Customer Support</h3>
+        <button type="button" onclick="document.getElementById('supportModal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-pakSurface text-slate-300 cursor-pointer">✕</button>
+      </div>
+      <p class="text-xs text-slate-300">Need help with EasyPaisa / JazzCash deposits or agency rebates? Contact our official M920 VIP desk:</p>
+      <div class="space-y-2 text-xs font-mono">
+        <div class="p-3 rounded-xl bg-pakSurface border border-white/10">Telegram VIP Desk: <strong class="text-pakGold">@M920VIP_Support</strong></div>
+        <div class="p-3 rounded-xl bg-pakSurface border border-white/10">Official Invite Code: <strong class="text-pakGreen">33573351660</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Super Admin PIN Modal (PIN: 1234) -->
+  <div id="adminAuthModal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-sm pak-card rounded-3xl p-5 space-y-3.5 border border-pakCrimson/60">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-black text-white">🔐 Super Admin Master Login</h3>
+        <button type="button" onclick="document.getElementById('adminAuthModal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-pakSurface text-slate-300 cursor-pointer">✕</button>
+      </div>
+      <p class="text-xs text-slate-300">Enter Master Admin PIN to control game win rates, force exact Aviator/WinGo results, and approve payouts. <span class="text-pakGold font-mono block mt-1">(Demo PIN: 1234)</span></p>
+      <form onsubmit="submitAdminPin(event)" class="space-y-3">
+        <input type="password" id="adminPinInput" inputmode="numeric" maxlength="6" placeholder="1234" class="w-full rounded-xl bg-black/60 border border-pakGold/45 px-4 py-3 text-center font-mono text-lg font-black tracking-widest text-pakGold" />
+        <div id="adminPinErr" class="hidden text-xs text-rose-400 text-center font-bold">Incorrect PIN! Enter 1234.</div>
+        <button type="submit" class="w-full py-3 rounded-2xl pak-gold-btn font-black text-sm uppercase cursor-pointer">
+          Unlock Super Admin Panel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SUPER ADMIN MASTER CONTROL PANEL OVERLAY -->
+  <div id="superAdminPanel" class="hidden fixed inset-0 z-50 bg-pakBg overflow-y-auto">
+    <div class="max-w-3xl mx-auto px-3 py-4 pb-12 space-y-4">
+      <div class="pak-card rounded-2xl p-4 flex items-center justify-between gap-2 border border-pakCrimson/50">
+        <div>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-pakCrimson text-white font-bold">MASTER CONTROL</span>
+          <h2 class="text-lg font-black text-white mt-0.5">M920 Super Admin Panel</h2>
+        </div>
+        <button type="button" onclick="document.getElementById('superAdminPanel').classList.add('hidden')" class="px-3.5 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">
+          ← Exit Admin
+        </button>
+      </div>
+
+      <!-- KPI Summary -->
+      <div class="grid grid-cols-3 gap-2.5 text-center">
+        <div class="pak-card rounded-2xl p-3">
+          <div class="text-[10px] text-slate-400">Approved Deposits</div>
+          <div id="admStatDeposits" class="font-mono text-sm sm:text-base font-black text-pakGreen mt-0.5">Rs. 3,000</div>
+        </div>
+        <div class="pak-card rounded-2xl p-3">
+          <div class="text-[10px] text-slate-400">Pending Withdrawals</div>
+          <div id="admStatPendingWit" class="font-mono text-sm sm:text-base font-black text-pakCrimson mt-0.5">1</div>
+        </div>
+        <div class="pak-card rounded-2xl p-3">
+          <div class="text-[10px] text-slate-400">House Profit</div>
+          <div id="admStatProfit" class="font-mono text-sm sm:text-base font-black text-pakGold mt-0.5">Rs. 18,400</div>
+        </div>
+      </div>
+
+      <!-- Win-Rate Sliders & Exact Result Overrides -->
+      <div class="pak-card rounded-2xl p-4 space-y-3.5">
+        <h3 class="text-sm font-black text-pakGoldLight">🎛️ 5-Category Game Win Probability &amp; Result Overrides</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div>
+            <div class="flex justify-between mb-1"><span>1. Crash / Aviator / Limbo</span><strong id="valWinAviator" class="font-mono text-pakGold">45%</strong></div>
+            <input type="range" id="rngWinAviator" min="5" max="95" value="45" oninput="updateAdminWinRates()" class="w-full accent-amber-400" />
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span>2. Lottery / Win Go</span><strong id="valWinWingo" class="font-mono text-pakGold">45%</strong></div>
+            <input type="range" id="rngWinWingo" min="5" max="95" value="45" oninput="updateAdminWinRates()" class="w-full accent-amber-400" />
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span>3. JILI Slots (Gems/Money/Ace)</span><strong id="valWinSlots" class="font-mono text-pakGold">48%</strong></div>
+            <input type="range" id="rngWinSlots" min="5" max="95" value="48" oninput="updateAdminWinRates()" class="w-full accent-amber-400" />
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span>4. Casino Tables (DT/AB/Roulette)</span><strong id="valWinTable" class="font-mono text-pakGold">48%</strong></div>
+            <input type="range" id="rngWinTable" min="5" max="95" value="48" oninput="updateAdminWinRates()" class="w-full accent-amber-400" />
+          </div>
+          <div class="sm:col-span-2">
+            <div class="flex justify-between mb-1"><span>5. Mini &amp; Dice (Plinko / Mines / 7UpDown / CrashDice)</span><strong id="valWinMini" class="font-mono text-pakGold">48%</strong></div>
+            <input type="range" id="rngWinMini" min="5" max="95" value="48" oninput="updateAdminWinRates()" class="w-full accent-amber-400" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-white/10">
+          <div class="space-y-1.5">
+            <label class="text-[11px] font-bold text-slate-300 block">✈️ Force Next Aviator Crash (x)</label>
+            <div class="flex gap-1.5">
+              <input type="number" id="admForceAviatorField" min="1.01" step="0.01" placeholder="e.g. 12.50" class="flex-1 rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+              <button type="button" onclick="applyForceAviator()" class="px-3 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">Lock</button>
+            </div>
+            <div id="admForceAviatorStatus" class="text-[10px] font-mono text-pakGold">Next Aviator: Auto</div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-[11px] font-bold text-slate-300 block">🎱 Force Next Win Go Ball (0–9)</label>
+            <div class="flex gap-1.5">
+              <select id="admForceWingoSelect" class="flex-1 rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white">
+                <option value="">Auto (Random)</option>
+                <option value="0">0 (Violet + Red)</option>
+                <option value="1">1 (Green)</option>
+                <option value="2">2 (Red)</option>
+                <option value="3">3 (Green)</option>
+                <option value="4">4 (Red)</option>
+                <option value="5">5 (Violet + Green)</option>
+                <option value="6">6 (Red)</option>
+                <option value="7">7 (Green)</option>
+                <option value="8">8 (Red)</option>
+                <option value="9">9 (Green)</option>
+              </select>
+              <button type="button" onclick="applyForceWingo()" class="px-3 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer">Lock</button>
+            </div>
+            <div id="admForceWingoStatus" class="text-[10px] font-mono text-pakGold">Next Win Go: Auto</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deposit & Withdrawal Approval Queue -->
+      <div class="pak-card rounded-2xl p-4 space-y-2.5">
+        <h3 class="text-sm font-black text-white">💳 EasyPaisa &amp; JazzCash Approval Queue</h3>
+        <div id="admTxApprovalQueue" class="space-y-2"></div>
+      </div>
+
+      <!-- Payment Account Settings & User Balance Manager -->
+      <div class="pak-card rounded-2xl p-4 space-y-3">
+        <h3 class="text-sm font-black text-white">📱 Payment Receiving Numbers &amp; User Balance</h3>
+        <form onsubmit="saveAdminReceivingAccounts(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+            <div class="font-bold text-pakGreen">EasyPaisa Account</div>
+            <input type="text" id="admEpNumInput" required class="w-full rounded-lg bg-pakSurface border border-white/15 px-2.5 py-1.5 font-mono text-white" />
+            <input type="text" id="admEpTitleInput" required class="w-full rounded-lg bg-pakSurface border border-white/15 px-2.5 py-1.5 text-white" />
+          </div>
+          <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+            <div class="font-bold text-pakCrimson">JazzCash Account</div>
+            <input type="text" id="admJcNumInput" required class="w-full rounded-lg bg-pakSurface border border-white/15 px-2.5 py-1.5 font-mono text-white" />
+            <input type="text" id="admJcTitleInput" required class="w-full rounded-lg bg-pakSurface border border-white/15 px-2.5 py-1.5 text-white" />
+          </div>
+          <button type="submit" class="sm:col-span-2 py-2.5 rounded-xl pak-gold-btn font-black text-xs uppercase cursor-pointer">
+            Update Live Payment Accounts
+          </button>
+        </form>
+
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+          <input type="number" id="admBalanceDeltaInput" step="100" placeholder="e.g. +2000 or -500" class="flex-1 min-w-[150px] rounded-xl bg-black/55 border border-white/15 px-3 py-2 text-xs font-mono text-white" />
+          <button type="button" onclick="applyAdminBalanceDelta()" class="px-4 py-2 rounded-xl bg-pakGreen text-pakBg font-black text-xs cursor-pointer">Adjust Balance</button>
+          <button type="button" onclick="resetAdminDemoBalance()" class="px-4 py-2 rounded-xl pak-fire-btn font-black text-xs cursor-pointer">Reset (5,000)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PAK_STATE_KEY = "m920_pakvip_flagship_v2";
+    const MASTER_ADMIN_PIN = "1234";
+
+    let state = {
+      balance: 5000,
+      jackpot: 4892450,
+      houseProfit: 18400,
+      todayCommission: 1500,
+      directSubordinates: 14,
+      teamVolume: 84500,
+      muted: false,
+      winRates: {
+        aviator: 45,
+        wingo: 45,
+        slots: 48,
+        table: 48,
+        mini: 48
+      },
+      forcedAviator: null,
+      forcedWingo: null,
+      accounts: {
+        epNum: "0345-1234567",
+        epTitle: "M920 Official",
+        jcNum: "0300-7654321",
+        jcTitle: "M920 Official"
+      },
+      aviatorPills: [3.42, 1.15, 11.80, 1.88, 2.54, 1.07, 5.20],
+      wingoHistory: [
+        { period: "20261119101", num: 7, color: "Green" },
+        { period: "20261119102", num: 2, color: "Red" },
+        { period: "20261119103", num: 5, color: "Violet+Green" },
+        { period: "20261119104", num: 0, color: "Violet+Red" }
+      ],
+      dvstRoad: ["D", "T", "D", "D", "Tie", "T"],
+      transactions: [
+        { id: "TX-101", type: "Deposit", method: "EasyPaisa", amount: 3000, detail: "TID88472910", holder: "M920_VIP_786", status: "Approved" },
+        { id: "TX-102", type: "Withdrawal", method: "JazzCash", amount: 1000, detail: "0300-7654321", holder: "Bilal Ahmed", status: "Pending" }
+      ]
+    };
+
+    // Runtime variables
+    let promoSlideIdx = 0;
+    let depMethod = "EasyPaisa";
+    let witMethod = "EasyPaisa";
+
+    // Aviator Dual-Bet state
+    let avFlying = false;
+    let avRaf = null;
+    let avStartTs = 0;
+    let avMult = 1.0;
+    let avCrashAt = 2.0;
+    let avBets = {
+      1: { active: false, stake: 0, cashed: false },
+      2: { active: false, stake: 0, cashed: false }
+    };
+
+    // Win Go state
+    let wingoModeSec = 60;
+    let wingoSecLeft = 60;
+    let wingoPeriodId = 20261119105;
+    let wingoTickets = [];
+    let slipState = { kind: "Color", val: "Green", payoutMult: 2.0, base: 100, mult: 1 };
+
+    // JILI Slots state
+    let slotSpinning = false;
+    let slotExtraBet = false;
+    let slotTurbo = false;
+
+    // Dragon Tiger state
+    let dvstChip = 100;
+    let dvstStakes = { Dragon: 0, Tie: 0, Tiger: 0 };
+
+    // Mines Pro state
+    let minesActive = false;
+    let minesBombSet = new Set();
+    let minesRevealed = new Set();
+    let minesStake = 100;
+
+    /* ==================== SOUND SYNTHESIZER ==================== */
+    let sfxCtx = null;
+    function playSfx(kind) {
+      if (state.muted) return;
+      try {
+        if (!sfxCtx) {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (Ctx) sfxCtx = new Ctx();
+        }
+        if (!sfxCtx) return;
+        if (sfxCtx.state === "suspended") sfxCtx.resume().catch(() => {});
+        const now = sfxCtx.currentTime;
+        const osc = sfxCtx.createOscillator();
+        const gain = sfxCtx.createGain();
+
+        if (kind === "tap") {
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(560, now);
+          osc.frequency.exponentialRampToValueAtTime(820, now + 0.05);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+          osc.connect(gain);
+          gain.connect(sfxCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.065);
+        } else if (kind === "beep") {
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(880, now);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+          osc.connect(gain);
+          gain.connect(sfxCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.1);
+        } else if (kind === "win") {
+          [523.25, 659.25, 783.99, 1046.5].forEach((f, idx) => {
+            const o = sfxCtx.createOscillator();
+            const g = sfxCtx.createGain();
+            o.type = "triangle";
+            o.frequency.setValueAtTime(f, now + idx * 0.07);
+            g.gain.setValueAtTime(0.08, now + idx * 0.07);
+            g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.22);
+            o.connect(g);
+            g.connect(sfxCtx.destination);
+            o.start(now + idx * 0.07);
+            o.stop(now + idx * 0.07 + 0.23);
+          });
+        } else if (kind === "boom") {
+          osc.type = "sawtooth";
+          osc.frequency.setValueAtTime(200, now);
+          osc.frequency.exponentialRampToValueAtTime(55, now + 0.32);
+          gain.gain.setValueAtTime(0.1, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.33);
+          osc.connect(gain);
+          gain.connect(sfxCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.34);
+        }
+      } catch (e) {}
+    }
+
+    function toggleAppSound() {
+      state.muted = !state.muted;
+      saveState();
+      document.getElementById("soundStatusEmoji").textContent = state.muted ? "🔇" : "🔊";
+      if (!state.muted) playSfx("tap");
+    }
+
+    /* ==================== STORAGE & HELPERS ==================== */
+    function saveState() {
+      try { localStorage.setItem(PAK_STATE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(PAK_STATE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") {
+          state = {
+            ...state,
+            ...parsed,
+            winRates: { ...state.winRates, ...(parsed.winRates || {}) },
+            accounts: { ...state.accounts, ...(parsed.accounts || {}) }
+          };
+        }
+      } catch (e) {}
+    }
+
+    function fmtRs(val) {
+      return (Number(val) || 0).toLocaleString("en-PK", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById("pakToast");
+      const txt = document.getElementById("pakToastText");
+      if (!box || !txt) return;
+      txt.textContent = msg;
+      box.classList.remove("hidden");
+      clearTimeout(window.__pakToastTimer);
+      window.__pakToastTimer = setTimeout(() => box.classList.add("hidden"), 2500);
+    }
+
+    function copyTextValue(val, label) {
+      playSfx("tap");
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = val;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showToast(label);
+      } catch (e) {
+        showToast(val);
+      }
+    }
+
+    function setInputNumber(id, val) {
+      playSfx("tap");
+      const el = document.getElementById(id);
+      if (el) el.value = val;
+    }
+
+    function syncBalancesUI() {
+      const formatted = fmtRs(state.balance);
+      document.getElementById("topWalletBalance").textContent = formatted;
+      document.getElementById("walletMainBalance").textContent = "Rs. " + formatted;
+      document.getElementById("agencyTodayComm").textContent = "Rs. " + fmtRs(state.todayCommission);
+      document.getElementById("agencyDirectCount").textContent = String(state.directSubordinates);
+      document.getElementById("agencyTeamVolume").textContent = "Rs. " + (state.teamVolume).toLocaleString("en-PK");
+    }
+
+    /* ==================== NAVIGATION & LOBBY ==================== */
+    function switchBottomTab(tabName) {
+      playSfx("tap");
+      document.querySelectorAll(".game-subview").forEach((g) => g.classList.add("hidden"));
+      document.querySelectorAll(".main-tab-section").forEach((sec) => {
+        sec.classList.toggle("hidden", sec.id !== "tab-" + tabName);
+      });
+
+      document.querySelectorAll(".pak-bnav").forEach((btn) => {
+        const active = btn.getAttribute("data-btab") === tabName;
+        btn.className = active
+          ? "pak-bnav flex flex-col items-center justify-center py-1 text-pakGold cursor-pointer"
+          : "pak-bnav flex flex-col items-center justify-center py-1 text-slate-400 cursor-pointer";
+      });
+    }
+
+    function openDepositDirectly() {
+      switchBottomTab("wallet");
+      toggleWalletSubView("deposit");
+    }
+
+    function backToLobby() {
+      switchBottomTab("home");
+    }
+
+    function launchGameScreen(gameId) {
+      playSfx("tap");
+      document.querySelectorAll(".main-tab-section").forEach((s) => s.classList.add("hidden"));
+      document.querySelectorAll(".game-subview").forEach((g) => g.classList.add("hidden"));
+
+      if (gameId === "superace") {
+        document.getElementById("jiliSlotHeaderTitle").textContent = "🃏 SUPER ACE (JILI)";
+        document.getElementById("game-gems").classList.remove("hidden");
+        return;
+      }
+      if (gameId === "gems") {
+        document.getElementById("jiliSlotHeaderTitle").textContent = "💎 FORTUNE GEMS 2 (JILI)";
+      }
+
+      const target = document.getElementById("game-" + gameId);
+      if (target) target.classList.remove("hidden");
+
+      if (gameId === "aviator") {
+        resizeAvCanvas();
+        renderAvCanvas(avMult, false);
+      } else if (gameId === "plinko") {
+        renderPlinkoBuckets();
+        drawPlinkoPyramid(null);
+      }
+    }
+
+    const PROMO_SLIDES = [
+      {
+        tag: "FIRST DEPOSIT BONUS",
+        title: "100% FIRST DEPOSIT BONUS UP TO RS. 50,000",
+        desc: "Instant EasyPaisa & JazzCash top-up with automatic VIP rebate!",
+        btn: "Deposit →",
+        fn: () => openDepositDirectly()
+      },
+      {
+        tag: "DAILY RESCUE FUND",
+        title: "5% DAILY LOSS RESCUE CASHBACK",
+        desc: "Play Win Go & JILI Slots worry-free with guaranteed daily rescue rewards.",
+        btn: "Claim Now →",
+        fn: () => switchBottomTab("activity")
+      },
+      {
+        tag: "AVIATOR RAIN BONUS",
+        title: "HOURLY AVIATOR FREE BET ENVELOPES",
+        desc: "Join the live Aviator room and catch instant PKR rain drops.",
+        btn: "Play Aviator →",
+        fn: () => launchGameScreen("aviator")
+      },
+      {
+        tag: "INVITE & EARN",
+        title: "INVITE & EARN RS. 500 PER FRIEND",
+        desc: "Share referral code 33573351660 and unlock 3-tier agency commissions.",
+        btn: "Invite Now →",
+        fn: () => switchBottomTab("promotion")
+      }
+    ];
+
+    function goPromoSlide(i) {
+      promoSlideIdx = i;
+      const s = PROMO_SLIDES[i];
+      document.getElementById("promoSlideTag").textContent = s.tag;
+      document.getElementById("promoSlideTitle").textContent = s.title;
+      document.getElementById("promoSlideDesc").textContent = s.desc;
+      document.getElementById("promoSlideBtn").textContent = s.btn;
+      document.querySelectorAll(".promo-dot").forEach((d, idx) => {
+        d.className = idx === i ? "promo-dot w-5 h-1.5 rounded-full bg-pakGold cursor-pointer" : "promo-dot w-2 h-1.5 rounded-full bg-white/30 cursor-pointer";
+      });
+    }
+
+    function triggerPromoSlideAction() {
+      PROMO_SLIDES[promoSlideIdx].fn();
+    }
+
+    function selectLobbyCategory(cat) {
+      playSfx("tap");
+      const titles = {
+        all: "👑 All 13 VIP Casino Games",
+        hot: "🔥 Hot Popular Games",
+        crash: "✈️ Crash & Rocket Games",
+        slots: "💎 JILI Slot Machines",
+        lottery: "🎱 Win Go Lottery",
+        casino: "🐉 Live Casino Tables",
+        mini: "🎲 Dice & Mini Games"
+      };
+      document.getElementById("lobbyCategoryHeading").textContent = titles[cat] || "👑 All VIP Games";
+
+      document.querySelectorAll(".lobby-side-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-lobbycat") === cat;
+        btn.className = active
+          ? "lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-fire-btn"
+          : "lobby-side-btn w-full py-2 px-1.5 rounded-2xl flex flex-col items-center justify-center text-center transition cursor-pointer pak-card text-slate-300";
+      });
+
+      let visibleCount = 0;
+      document.querySelectorAll(".game-tile").forEach((tile) => {
+        const cats = tile.getAttribute("data-cats") || "";
+        const show = cats.includes(cat);
+        tile.classList.toggle("hidden", !show);
+        if (show) visibleCount++;
+      });
+      const countEl = document.getElementById("lobbyVisibleCount");
+      if (countEl) countEl.textContent = `${visibleCount} Games Online`;
+    }
+
+    function renderMarqueeAndLeaderboard() {
+      const feed = [
+        "0300****412 won Rs. 18,500 in Aviator (9.25x)",
+        "0345****889 won Rs. 9,000 in Win Go 1Min",
+        "0312****104 won Rs. 24,000 in Fortune Gems 2",
+        "0333****771 won Rs. 12,800 in Dragon Tiger",
+        "0321****552 won Rs. 7,600 in Mines Pro"
+      ];
+      document.getElementById("pakAnnouncementMarquee").innerHTML = [...feed, ...feed]
+        .map((t) => `<span class="inline-block">🏆 ${t}</span>`)
+        .join("");
+
+      const leaders = [
+        { rank: "🥇", user: "0300****412", game: "Aviator", amount: "Rs. 1,42,500" },
+        { rank: "🥈", user: "0345****918", game: "Fortune Gems 2", amount: "Rs. 98,200" },
+        { rank: "🥉", user: "0315****230", game: "Win Go 1Min", amount: "Rs. 76,400" },
+        { rank: "4", user: "0332****604", game: "Super Ace", amount: "Rs. 54,900" },
+        { rank: "5", user: "0321****819", game: "Dragon Tiger", amount: "Rs. 41,300" }
+      ];
+      document.getElementById("todaysLeaderboardList").innerHTML = leaders.map((l) => `
+        <div class="flex items-center justify-between bg-pakSurface/75 border border-white/5 rounded-xl px-3 py-2 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-5 text-center font-mono font-black text-pakGold">${l.rank}</span>
+            <span class="font-mono font-bold text-white">${l.user}</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-black/40 text-slate-300">${l.game}</span>
+          </div>
+          <span class="font-mono font-black text-pakGold">${l.amount}</span>
+        </div>
+      `).join("");
+    }
+
+    /* ==================== LUCKY WHEEL & DAILY CHECK-IN ==================== */
+    function openLuckyWheelModal() {
+      playSfx("tap");
+      document.getElementById("luckyWheelModal").classList.remove("hidden");
+    }
+
+    function spinLuckyWheel() {
+      playSfx("tap");
+      const disc = document.getElementById("wheelDisc");
+      const deg = 720 + Math.floor(Math.random() * 360);
+      disc.style.transform = `rotate(${deg}deg)`;
+      const prizes = [100, 200, 500, 50, 1000];
+      const won = prizes[Math.floor(Math.random() * prizes.length)];
+      setTimeout(() => {
+        state.balance += won;
+        saveState();
+        syncBalancesUI();
+        playSfx("win");
+        document.getElementById("wheelPrizeText").textContent = `+Rs. ${won}`;
+        showToast(`Lucky Wheel Prize: +Rs. ${won} Credited!`);
+      }, 950);
+    }
+
+    function openCheckinModal() {
+      playSfx("tap");
+      document.getElementById("checkinModal").classList.remove("hidden");
+    }
+
+    function claimDailyCheckin() {
+      state.balance += 200;
+      saveState();
+      syncBalancesUI();
+      playSfx("win");
+      document.getElementById("checkinModal").classList.add("hidden");
+      showToast("Day 3 VIP Check-In Claimed: +Rs. 200!");
+    }
+
+    function claimActivityBonus(amt, title) {
+      state.balance += amt;
+      saveState();
+      syncBalancesUI();
+      playSfx("win");
+      showToast(`${title}: +Rs. ${amt} Credited!`);
+    }
+
+    function openSupportModal() {
+      playSfx("tap");
+      document.getElementById("supportModal").classList.remove("hidden");
+    }
+
+    /* ==================== GAME 1: AVIATOR (DUAL BET PANELS) ==================== */
+    function resizeAvCanvas() {
+      const c = document.getElementById("aviatorFlightCanvas");
+      if (!c) return;
+      const r = c.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0) {
+        c.width = r.width * window.devicePixelRatio;
+        c.height = r.height * window.devicePixelRatio;
+      }
+    }
+
+    function renderAvCanvas(mult, crashed) {
+      const c = document.getElementById("aviatorFlightCanvas");
+      if (!c) return;
+      const ctx = c.getContext("2d");
+      const w = c.width;
+      const h = c.height;
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.strokeStyle = "rgba(230, 46, 61, 0.14)";
+      ctx.lineWidth = 1;
+      for (let i = 1; i <= 4; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, (h / 5) * i);
+        ctx.lineTo(w, (h / 5) * i);
+        ctx.stroke();
+      }
+
+      const prog = Math.min(1, (mult - 1) / 4.2);
+      const sx = w * 0.06;
+      const sy = h * 0.88;
+      const ex = sx + w * 0.82 * prog;
+      const ey = sy - h * 0.72 * Math.pow(prog, 0.85);
+      const cx = sx + (ex - sx) * 0.55;
+
+      const grad = ctx.createLinearGradient(0, ey, 0, sy);
+      grad.addColorStop(0, "rgba(230, 46, 61, 0.38)");
+      grad.addColorStop(1, "rgba(9, 6, 12, 0)");
+
+      ctx.beginPath();
+      ctx.moveTo(sx, sy);
+      ctx.quadraticCurveTo(cx, sy, ex, ey);
+      ctx.lineTo(ex, sy);
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(sx, sy);
+      ctx.quadraticCurveTo(cx, sy, ex, ey);
+      ctx.strokeStyle = "#e62e3d";
+      ctx.lineWidth = 4 * window.devicePixelRatio;
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(ex, ey, 7 * window.devicePixelRatio, 0, Math.PI * 2);
+      ctx.fillStyle = crashed ? "#ff6b2b" : "#ffe48f";
+      ctx.fill();
+    }
+
+    function renderAviatorPillsAndRoom() {
+      const bar = document.getElementById("aviatorTopHistoryBar");
+      if (bar) {
+        bar.innerHTML = state.aviatorPills.map((m) => {
+          const cls = m >= 10
+            ? "bg-pink-600/25 text-pink-300 border-pink-500/45"
+            : m >= 2
+              ? "bg-purple-600/25 text-purple-300 border-purple-500/45"
+              : "bg-sky-600/25 text-sky-300 border-sky-500/45";
+          return `<span class="px-2 py-0.5 rounded-full font-mono text-[10px] font-bold border shrink-0 ${cls}">${m.toFixed(2)}x</span>`;
+        }).join("");
+      }
+
+      const tbl = document.getElementById("aviatorLivePlayersTable");
+      if (tbl) {
+        const rows = [
+          { p: "0300****412", b: "Rs. 2,000", c: "2.40x", w: "Rs. 4,800" },
+          { p: "0345****119", b: "Rs. 500", c: "1.55x", w: "Rs. 775" },
+          { p: "0312****883", b: "Rs. 5,000", c: "1.80x", w: "Rs. 9,000" }
+        ];
+        tbl.innerHTML = rows.map((r) => `
+          <div class="flex items-center justify-between bg-black/40 px-2.5 py-1.5 rounded-lg">
+            <span class="text-slate-300">${r.p} • ${r.b}</span>
+            <span class="text-pakGreen font-bold">${r.c} → ${r.w}</span>
+          </div>
+        `).join("");
+      }
+    }
+
+    function handleAviatorSlotAction(slot) {
+      const info = avBets[slot];
+      // Cash out if currently flying & bet active
+      if (avFlying && info.active && !info.cashed) {
+        info.cashed = true;
+        const winAmt = Number((info.stake * avMult).toFixed(2));
+        state.balance = Number((state.balance + winAmt).toFixed(2));
+        saveState();
+        syncBalancesUI();
+        playSfx("win");
+        updateAviatorButtons();
+        showToast(`Bet ${slot} Cashed Out at ${avMult.toFixed(2)}x (+Rs. ${fmtRs(winAmt)})`);
+        return;
+      }
+
+      if (avFlying) {
+        showToast("Wait for next takeoff!");
+        return;
+      }
+
+      const stake = parseFloat(document.getElementById(`aviatorStake${slot}`)?.value || "0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid stake or insufficient balance!");
+        return;
+      }
+
+      state.balance = Number((state.balance - stake).toFixed(2));
+      avBets[slot] = { active: true, stake, cashed: false };
+      saveState();
+      syncBalancesUI();
+      startAviatorTakeoff();
+    }
+
+    function updateAviatorButtons() {
+      [1, 2].forEach((slot) => {
+        const btn = document.getElementById(`aviatorBtn${slot}`);
+        const st = avBets[slot];
+        if (!btn) return;
+        if (avFlying && st.active && !st.cashed) {
+          btn.className = "w-full py-2.5 rounded-xl bg-pakGreen text-pakBg font-black text-xs uppercase cursor-pointer";
+          btn.textContent = `CASH OUT ${fmtRs(st.stake * avMult)} PKR`;
+        } else {
+          const val = document.getElementById(`aviatorStake${slot}`)?.value || "200";
+          btn.className = slot === 1
+            ? "w-full py-2.5 rounded-xl pak-fire-btn font-black text-xs uppercase cursor-pointer"
+            : "w-full py-2.5 rounded-xl pak-gold-btn font-black text-xs uppercase cursor-pointer";
+          btn.textContent = `BET ${val} PKR`;
+        }
+      });
+    }
+
+    function startAviatorTakeoff() {
+      if (avFlying) return;
+      avFlying = true;
+      avMult = 1.0;
+      avStartTs = performance.now();
+      playSfx("tap");
+
+      if (state.forcedAviator && state.forcedAviator >= 1.01) {
+        avCrashAt = Number(state.forcedAviator);
+        state.forcedAviator = null;
+        refreshAdminForceLabels();
+      } else {
+        const winProb = state.winRates.aviator / 100;
+        avCrashAt = Math.random() > winProb
+          ? Number((1.04 + Math.random() * 0.45).toFixed(2))
+          : Number((1.65 + Math.pow(Math.random(), 1.7) * 9.0).toFixed(2));
+      }
+
+      document.getElementById("aviatorRoundBadge").textContent = "FLYING";
+      document.getElementById("aviatorCenterMult").className = "font-mono text-4xl sm:text-6xl font-black text-white";
+      document.getElementById("aviatorCenterSub").textContent = "Climbing... Cash out before crash!";
+
+      function loop(now) {
+        if (!avFlying) return;
+        const sec = (now - avStartTs) / 1000;
+        avMult = Number((1 + Math.pow(sec, 1.35) * 0.44).toFixed(2));
+        document.getElementById("aviatorCenterMult").textContent = avMult.toFixed(2) + "x";
+        renderAvCanvas(avMult, false);
+        updateAviatorButtons();
+
+        // Check Auto Cash-Outs
+        [1, 2].forEach((s) => {
+          const autoVal = parseFloat(document.getElementById(`aviatorAutoCash${s}`)?.value || "0");
+          if (avBets[s].active && !avBets[s].cashed && autoVal >= 1.1 && avMult >= autoVal && autoVal < avCrashAt) {
+            handleAviatorSlotAction(s);
+          }
+        });
+
+        if (avMult >= avCrashAt) {
+          avFlying = false;
+          cancelAnimationFrame(avRaf);
+          state.aviatorPills.unshift(avCrashAt);
+          if (state.aviatorPills.length > 10) state.aviatorPills.pop();
+          avBets = { 1: { active: false, stake: 0, cashed: false }, 2: { active: false, stake: 0, cashed: false } };
+          saveState();
+          renderAviatorPillsAndRoom();
+          renderAvCanvas(avCrashAt, true);
+          updateAviatorButtons();
+          playSfx("boom");
+          document.getElementById("aviatorRoundBadge").textContent = "CRASHED";
+          document.getElementById("aviatorCenterMult").textContent = avCrashAt.toFixed(2) + "x";
+          document.getElementById("aviatorCenterMult").className = "font-mono text-4xl sm:text-6xl font-black text-pakCrimson";
+          document.getElementById("aviatorCenterSub").textContent = `Flew Away @ ${avCrashAt.toFixed(2)}x`;
+          return;
+        }
+        avRaf = requestAnimationFrame(loop);
+      }
+      avRaf = requestAnimationFrame(loop);
+    }
+
+    /* ==================== GAME 2: WIN GO LOTTERY ==================== */
+    function initWingoBalls() {
+      const grid = document.getElementById("wingoBallsGrid");
+      if (!grid) return;
+      grid.innerHTML = "";
+      for (let n = 0; n <= 9; n++) {
+        const cls = n === 0 ? "ball-violet-red" : n === 5 ? "ball-violet-green" : n % 2 === 1 ? "ball-green" : "ball-red";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `h-11 rounded-2xl lotto-ball ${cls} font-mono font-black text-base text-white flex items-center justify-center cursor-pointer active:scale-95 transition`;
+        btn.textContent = String(n);
+        btn.onclick = () => openWingoBetSlip("Number", n, 9.0);
+        grid.appendChild(btn);
+      }
+    }
+
+    function switchWingoMode(seconds) {
+      playSfx("tap");
+      wingoModeSec = seconds;
+      wingoSecLeft = seconds;
+      const label = seconds === 30
+        ? "Win Go 30s"
+        : seconds === 60
+          ? "Win Go 1Min"
+          : seconds === 180
+            ? "Win Go 3Min"
+            : "Win Go 5Min";
+      document.getElementById("wingoModeBadge").textContent = label;
+      document.querySelectorAll(".wingo-mode-btn").forEach((b) => {
+        const active = Number(b.getAttribute("data-wingomode")) === seconds;
+        b.className = active
+          ? "wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer pak-fire-btn"
+          : "wingo-mode-btn py-2 rounded-xl text-[11px] font-black cursor-pointer text-slate-300";
+      });
+      renderWingoClock();
+    }
+
+    function renderWingoClock() {
+      const mins = Math.floor(wingoSecLeft / 60);
+      const secs = wingoSecLeft % 60;
+      document.getElementById("wingoDigitalTimer").textContent = `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+      document.getElementById("wingoPeriodNumber").textContent = String(wingoPeriodId);
+    }
+
+    function openWingoBetSlip(kind, val, payoutMult) {
+      playSfx("tap");
+      slipState = { ...slipState, kind, val, payoutMult };
+      document.getElementById("slipChoiceLabel").textContent = `${kind === "Number" ? "Ball #" + val : val} (${payoutMult}x)`;
+      updateSlipTotal();
+      document.getElementById("wingoSlipModal").classList.remove("hidden");
+    }
+
+    function closeWingoBetSlip() {
+      document.getElementById("wingoSlipModal").classList.add("hidden");
+    }
+
+    function setSlipBase(b) {
+      playSfx("tap");
+      slipState.base = b;
+      document.querySelectorAll(".slip-base-btn").forEach((btn) => {
+        btn.className = Number(btn.textContent) === b
+          ? "slip-base-btn py-1.5 rounded-lg pak-gold-btn font-mono text-xs font-black cursor-pointer"
+          : "slip-base-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer";
+      });
+      updateSlipTotal();
+    }
+
+    function setSlipMult(m) {
+      playSfx("tap");
+      slipState.mult = m;
+      document.querySelectorAll(".slip-mult-btn").forEach((btn) => {
+        btn.className = btn.textContent === "x" + m
+          ? "slip-mult-btn py-1.5 rounded-lg pak-fire-btn font-mono text-xs font-black cursor-pointer"
+          : "slip-mult-btn py-1.5 rounded-lg bg-pakSurface font-mono text-xs font-bold text-white cursor-pointer";
+      });
+      updateSlipTotal();
+    }
+
+    function updateSlipTotal() {
+      document.getElementById("slipTotalStakeText").textContent = "Rs. " + (slipState.base * slipState.mult).toLocaleString("en-PK");
+    }
+
+    function confirmWingoBetSlip() {
+      const total = slipState.base * slipState.mult;
+      if (total > state.balance) {
+        showToast("Insufficient PKR balance!");
+        return;
+      }
+      state.balance = Number((state.balance - total).toFixed(2));
+      wingoTickets.push({ ...slipState, total });
+      saveState();
+      syncBalancesUI();
+      closeWingoBetSlip();
+      playSfx("tap");
+      document.getElementById("wingoActiveTicketsBar").innerHTML = wingoTickets
+        .map((t) => `<span class="inline-block mr-2 px-2 py-0.5 rounded bg-pakSurface text-pakGold">${t.val}: Rs.${t.total}</span>`)
+        .join("");
+      showToast(`Win Go Bet Placed: Rs. ${total}`);
+    }
+
+    function forceImmediateWingoDraw() {
+      executeWingoDraw();
+      wingoSecLeft = wingoModeSec;
+      wingoPeriodId++;
+      renderWingoClock();
+    }
+
+    function executeWingoDraw() {
+      let num = Math.floor(Math.random() * 10);
+      if (state.forcedWingo !== null && state.forcedWingo !== "") {
+        num = Number(state.forcedWingo);
+        state.forcedWingo = null;
+        refreshAdminForceLabels();
+      } else if (wingoTickets.length > 0 && Math.random() * 100 > state.winRates.wingo) {
+        const first = wingoTickets[0];
+        if (first.kind === "Number") num = (first.val + 1) % 10;
+        else if (first.val === "Green") num = 2;
+        else if (first.val === "Red") num = 1;
+      }
+
+      const colorLabel = num === 0 ? "Violet+Red" : num === 5 ? "Violet+Green" : num % 2 === 1 ? "Green" : "Red";
+      state.wingoHistory.unshift({ period: String(wingoPeriodId), num, color: colorLabel });
+      if (state.wingoHistory.length > 8) state.wingoHistory.pop();
+
+      let wonTotal = 0;
+      wingoTickets.forEach((t) => {
+        const hit =
+          (t.kind === "Number" && t.val === num) ||
+          (t.kind === "Size" && ((t.val === "Big" && num >= 5) || (t.val === "Small" && num <= 4))) ||
+          (t.kind === "Color" && colorLabel.includes(t.val));
+        if (hit) wonTotal += t.total * t.payoutMult;
+      });
+
+      if (wonTotal > 0) {
+        state.balance = Number((state.balance + wonTotal).toFixed(2));
+        playSfx("win");
+        showToast(`Win Go #${num} (${colorLabel})! Won Rs. ${fmtRs(wonTotal)}`);
+      } else if (wingoTickets.length > 0) {
+        playSfx("boom");
+        showToast(`Win Go Result: #${num} (${colorLabel})`);
+      }
+
+      wingoTickets = [];
+      document.getElementById("wingoActiveTicketsBar").textContent = "Tap any Color, Ball (0–9), or Big/Small to open Bet Slip.";
+      saveState();
+      syncBalancesUI();
+      renderWingoHistoryTable();
+    }
+
+    function renderWingoHistoryTable() {
+      const body = document.getElementById("wingoHistoryTableBody");
+      if (!body) return;
+      body.innerHTML = state.wingoHistory.map((r) => {
+        const dots = r.color.split("+").map((c) => {
+          const bg = c === "Green" ? "bg-pakGreen" : c === "Red" ? "bg-pakCrimson" : "bg-pakViolet";
+          return `<span class="inline-block w-2.5 h-2.5 rounded-full ${bg} mr-1"></span>`;
+        }).join("");
+        return `
+          <tr>
+            <td class="py-2 pr-2 text-slate-300">${r.period}</td>
+            <td class="py-2 pr-2 font-black text-pakGold">${r.num}</td>
+            <td class="py-2 pr-2 text-slate-300">${r.num >= 5 ? "Big" : "Small"}</td>
+            <td class="py-2">${dots}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    /* ==================== GAME 3: JILI SLOTS (FORTUNE GEMS 2 / SUPER ACE) ==================== */
+    const JILI_SYMBOLS = [
+      { icon: "♦️", name: "RUBY", m: 2 },
+      { icon: "💚", name: "EMERALD", m: 3 },
+      { icon: "💎", name: "DIAMOND", m: 4 },
+      { icon: "👑", name: "CROWN", m: 6 },
+      { icon: "⭐", name: "WILD", m: 8 }
+    ];
+    const JILI_WHEEL = [1, 2, 3, 5, 10, 15];
+
+    function toggleJiliExtraBet() {
+      slotExtraBet = !slotExtraBet;
+      playSfx("tap");
+      const b = document.getElementById("jiliExtraBetBtn");
+      b.textContent = slotExtraBet ? "🔥 Extra Bet: ON" : "🔥 Extra Bet: OFF";
+      b.className = slotExtraBet
+        ? "col-span-4 py-2.5 rounded-xl pak-fire-btn text-[10px] font-extrabold cursor-pointer"
+        : "col-span-4 py-2.5 rounded-xl bg-pakSurface border border-white/15 text-[10px] font-extrabold text-slate-200 cursor-pointer";
+    }
+
+    function toggleJiliTurbo() {
+      slotTurbo = !slotTurbo;
+      playSfx("tap");
+      const b = document.getElementById("jiliTurboBtn");
+      b.textContent = slotTurbo ? "⚡ Turbo: ON" : "⚡ Turbo: OFF";
+      b.className = slotTurbo
+        ? "col-span-4 py-2.5 rounded-xl pak-gold-btn text-[10px] font-extrabold cursor-pointer"
+        : "col-span-4 py-2.5 rounded-xl bg-pakSurface border border-white/15 text-[10px] font-extrabold text-slate-200 cursor-pointer";
+    }
+
+    function triggerCoinShower() {
+      const layer = document.getElementById("coinShowerLayer");
+      if (!layer) return;
+      layer.innerHTML = "";
+      for (let i = 0; i < 14; i++) {
+        const coin = document.createElement("span");
+        coin.className = "coin-particle text-lg";
+        coin.style.left = Math.random() * 90 + "%";
+        coin.style.animationDelay = Math.random() * 0.3 + "s";
+        coin.textContent = "🪙";
+        layer.appendChild(coin);
+      }
+      setTimeout(() => { layer.innerHTML = ""; }, 1500);
+    }
+
+    function spinJiliSlotMachine() {
+      if (slotSpinning) return;
+      const baseStake = parseFloat(document.getElementById("jiliBetAmount")?.value || "0");
+      const actualCost = slotExtraBet ? baseStake * 1.5 : baseStake;
+      if (Number.isNaN(baseStake) || baseStake < 10 || actualCost > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+
+      slotSpinning = true;
+      state.balance = Number((state.balance - actualCost).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      const cells = document.querySelectorAll(".gem-reel-cell");
+      cells.forEach((c) => c.classList.add("slot-spinning"));
+      const wheel = document.getElementById("gemWheelValue");
+      wheel.classList.add("slot-spinning");
+
+      setTimeout(() => {
+        cells.forEach((c) => c.classList.remove("slot-spinning"));
+        wheel.classList.remove("slot-spinning");
+
+        const grid = Array.from({ length: 9 }, () => JILI_SYMBOLS[Math.floor(Math.random() * JILI_SYMBOLS.length)]);
+        const effectiveWinPct = Math.min(95, state.winRates.slots + (slotExtraBet ? 12 : 0));
+        if (Math.random() * 100 < effectiveWinPct) {
+          const sym = JILI_SYMBOLS[Math.floor(Math.random() * JILI_SYMBOLS.length)];
+          grid[3] = sym;
+          grid[4] = sym;
+          grid[5] = sym;
+        }
+
+        grid.forEach((s, i) => {
+          const el = document.getElementById(`gemCell-${i}`);
+          if (el) el.innerHTML = `<span>${s.icon}</span><span class="text-[8px] font-mono text-slate-300">${s.name}</span>`;
+        });
+
+        const wheelMult = JILI_WHEEL[Math.floor(Math.random() * JILI_WHEEL.length)];
+        wheel.textContent = wheelMult + "x";
+
+        let lineMult = 0;
+        [[0, 1, 2], [3, 4, 5], [6, 7, 8]].forEach((row) => {
+          const [a, b, c] = row.map((idx) => grid[idx]);
+          if (a.name === b.name && b.name === c.name) lineMult += a.m;
+        });
+
+        if (lineMult > 0) {
+          const payout = Number((baseStake * lineMult * wheelMult).toFixed(2));
+          state.balance = Number((state.balance + payout).toFixed(2));
+          playSfx("win");
+          triggerCoinShower();
+          document.getElementById("jiliSlotStatusLine").textContent = `🎉 MEGA WIN! ${lineMult}x × ${wheelMult}x = +Rs. ${fmtRs(payout)}`;
+          showToast(`JILI Slot Win: +Rs. ${fmtRs(payout)}`);
+        } else {
+          document.getElementById("jiliSlotStatusLine").textContent = "Try again for 15x Bonus Multiplier!";
+        }
+
+        saveState();
+        syncBalancesUI();
+        slotSpinning = false;
+      }, slotTurbo ? 320 : 800);
+    }
+
+    /* ==================== GAME 4: DRAGON VS TIGER ==================== */
+    function pickDvstChip(val) {
+      playSfx("tap");
+      dvstChip = val;
+      document.querySelectorAll(".dchip-btn").forEach((b) => {
+        const active = Number(b.getAttribute("data-dchip")) === val;
+        b.className = active
+          ? "dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer pak-gold-btn border-pakGold"
+          : "dchip-btn px-2.5 py-1 rounded-full font-mono text-[11px] font-black border cursor-pointer bg-pakSurface border-white/15 text-slate-300";
+      });
+    }
+
+    function placeDvstChipOn(side) {
+      if (dvstChip > state.balance) {
+        showToast("Insufficient balance!");
+        return;
+      }
+      playSfx("tap");
+      state.balance = Number((state.balance - dvstChip).toFixed(2));
+      dvstStakes[side] += dvstChip;
+      saveState();
+      syncBalancesUI();
+      updateDvstLabels();
+    }
+
+    function resetDvstStakes() {
+      const ref = dvstStakes.Dragon + dvstStakes.Tie + dvstStakes.Tiger;
+      state.balance = Number((state.balance + ref).toFixed(2));
+      dvstStakes = { Dragon: 0, Tie: 0, Tiger: 0 };
+      saveState();
+      syncBalancesUI();
+      updateDvstLabels();
+    }
+
+    function updateDvstLabels() {
+      document.getElementById("dvstStakeDragon").textContent = "Rs. " + dvstStakes.Dragon;
+      document.getElementById("dvstStakeTie").textContent = "Rs. " + dvstStakes.Tie;
+      document.getElementById("dvstStakeTiger").textContent = "Rs. " + dvstStakes.Tiger;
+    }
+
+    function revealDvstRound() {
+      if (dvstStakes.Dragon + dvstStakes.Tie + dvstStakes.Tiger <= 0) {
+        showToast("Place chips on Dragon, Tie, or Tiger first!");
+        return;
+      }
+      const ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+      let d = Math.floor(Math.random() * 13);
+      let t = Math.floor(Math.random() * 13);
+      if (Math.random() * 100 < state.winRates.table) {
+        if (dvstStakes.Dragon >= dvstStakes.Tiger) { d = Math.max(2, d); t = Math.floor(Math.random() * d); }
+        else { t = Math.max(2, t); d = Math.floor(Math.random() * t); }
+      }
+      document.getElementById("dvstDragonCard").textContent = ranks[d] + "♠";
+      document.getElementById("dvstTigerCard").textContent = ranks[t] + "♦";
+
+      const winner = d > t ? "Dragon" : t > d ? "Tiger" : "Tie";
+      state.dvstRoad.unshift(winner === "Tie" ? "Tie" : winner[0]);
+      if (state.dvstRoad.length > 8) state.dvstRoad.pop();
+
+      const won = winner === "Dragon" ? dvstStakes.Dragon * 2 : winner === "Tiger" ? dvstStakes.Tiger * 2 : dvstStakes.Tie * 8;
+      if (won > 0) {
+        state.balance = Number((state.balance + won).toFixed(2));
+        playSfx("win");
+        showToast(`${winner} Wins! +Rs. ${fmtRs(won)}`);
+      } else {
+        playSfx("boom");
+        showToast(`${winner} Wins!`);
+      }
+      dvstStakes = { Dragon: 0, Tie: 0, Tiger: 0 };
+      saveState();
+      syncBalancesUI();
+      updateDvstLabels();
+      renderDvstRoad();
+    }
+
+    function renderDvstRoad() {
+      const strip = document.getElementById("dvstHistoryStrip");
+      if (!strip) return;
+      strip.innerHTML = state.dvstRoad.map((x) => {
+        const cls = x === "D" ? "bg-pakCrimson text-white" : x === "T" ? "bg-pakGold text-pakBg" : "bg-pakGreen text-pakBg";
+        return `<span class="w-5 h-5 rounded-full flex items-center justify-center font-mono text-[9px] font-black ${cls}">${x}</span>`;
+      }).join("");
+    }
+
+    /* ==================== GAME 5: MINES PRO ==================== */
+    function renderMinesGrid() {
+      const board = document.getElementById("minesGridBoard");
+      if (!board) return;
+      board.innerHTML = "";
+      for (let i = 0; i < 25; i++) {
+        const tile = document.createElement("button");
+        tile.type = "button";
+        const opened = minesRevealed.has(i);
+        tile.className = opened
+          ? "h-12 rounded-xl bg-pakGold/20 border border-pakGold text-lg flex items-center justify-center"
+          : "h-12 rounded-xl bg-pakSurface hover:border-pakGold/50 border border-white/10 text-sm font-mono text-slate-400 cursor-pointer";
+        tile.textContent = opened ? "⭐" : "?";
+        tile.onclick = () => clickMinesTile(i);
+        board.appendChild(tile);
+      }
+    }
+
+    function startNewMinesGame() {
+      const stake = parseFloat(document.getElementById("minesStakeInput")?.value || "0");
+      const bombCount = Math.min(20, Math.max(1, parseInt(document.getElementById("minesCountInput")?.value || "3", 10)));
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      minesStake = stake;
+      minesActive = true;
+      minesRevealed.clear();
+      minesBombSet.clear();
+      while (minesBombSet.size < bombCount) {
+        minesBombSet.add(Math.floor(Math.random() * 25));
+      }
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+      renderMinesGrid();
+      document.getElementById("minesStartBtn").classList.add("hidden");
+      document.getElementById("minesCashoutBtn").classList.remove("hidden");
+      document.getElementById("minesCurrentWinVal").textContent = fmtRs(minesStake);
+    }
+
+    function clickMinesTile(idx) {
+      if (!minesActive || minesRevealed.has(idx)) return;
+      if (minesBombSet.has(idx)) {
+        minesActive = false;
+        playSfx("boom");
+        document.getElementById("minesStartBtn").classList.remove("hidden");
+        document.getElementById("minesCashoutBtn").classList.add("hidden");
+        const board = document.getElementById("minesGridBoard");
+        if (board && board.children[idx]) {
+          board.children[idx].className = "h-12 rounded-xl bg-pakCrimson text-lg flex items-center justify-center";
+          board.children[idx].textContent = "💣";
+        }
+        showToast("BOOM! You hit a mine!");
+        return;
+      }
+
+      minesRevealed.add(idx);
+      playSfx("tap");
+      renderMinesGrid();
+      const mult = Number((1 + minesRevealed.size * (0.18 + minesBombSet.size * 0.05)).toFixed(2));
+      document.getElementById("minesNextMultBadge").textContent = `Current: ${mult}x`;
+      document.getElementById("minesCurrentWinVal").textContent = fmtRs(minesStake * mult);
+    }
+
+    function cashoutMinesGame() {
+      if (!minesActive) return;
+      minesActive = false;
+      const mult = Number((1 + minesRevealed.size * (0.18 + minesBombSet.size * 0.05)).toFixed(2));
+      const win = Number((minesStake * mult).toFixed(2));
+      state.balance = Number((state.balance + win).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("win");
+      document.getElementById("minesStartBtn").classList.remove("hidden");
+      document.getElementById("minesCashoutBtn").classList.add("hidden");
+      showToast(`Mines Cash-Out: +Rs. ${fmtRs(win)}`);
+    }
+
+    /* ==================== GAME 6: JILI MONEY COMING ==================== */
+    let mcSpinning = false;
+    function spinMoneyComing() {
+      if (mcSpinning) return;
+      const stake = parseFloat(document.getElementById("mcStakeSelect")?.value || "100");
+      if (stake > state.balance) {
+        showToast("Insufficient PKR balance!");
+        return;
+      }
+      mcSpinning = true;
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      document.querySelectorAll(".mc-reel").forEach((r) => r.classList.add("slot-spinning"));
+      setTimeout(() => {
+        document.querySelectorAll(".mc-reel").forEach((r) => r.classList.remove("slot-spinning"));
+        const winRoll = Math.random() * 100 < state.winRates.slots;
+        const d1 = winRoll ? [1, 2, 5][Math.floor(Math.random() * 3)] : 0;
+        const d2 = winRoll ? [0, 5][Math.floor(Math.random() * 2)] : [0, 1][Math.floor(Math.random() * 2)];
+        const d3 = winRoll ? 0 : 0;
+        const wheelOpts = [1, 2, 3, 5, 10];
+        const wMult = wheelOpts[Math.floor(Math.random() * wheelOpts.length)];
+
+        document.getElementById("mcReel-0").textContent = String(d1);
+        document.getElementById("mcReel-1").textContent = String(d2);
+        document.getElementById("mcReel-2").textContent = String(d3);
+        document.getElementById("mcWheelMult").textContent = wMult + "x";
+
+        const baseNumber = d1 * 100 + d2 * 10 + d3;
+        const scale = stake / 50;
+        const payout = Number((baseNumber * scale * wMult).toFixed(2));
+
+        if (payout > 0) {
+          state.balance = Number((state.balance + payout).toFixed(2));
+          playSfx("win");
+          document.getElementById("mcStatusBanner").textContent = `🎉 CASH HIT! ${baseNumber} × ${scale}x × ${wMult}x = +Rs. ${fmtRs(payout)}`;
+          showToast(`Money Coming Win: +Rs. ${fmtRs(payout)}`);
+        } else {
+          document.getElementById("mcStatusBanner").textContent = "000 — Spin again for instant cash digits!";
+        }
+        saveState();
+        syncBalancesUI();
+        mcSpinning = false;
+      }, 650);
+    }
+
+    /* ==================== GAME 7: PLINKO VIP ==================== */
+    const PLINKO_BUCKETS = {
+      low: [5.6, 2.1, 1.1, 1.0, 0.5, 1.0, 1.1, 2.1, 5.6],
+      medium: [13, 3.0, 1.3, 0.7, 0.3, 0.7, 1.3, 3.0, 13],
+      high: [29, 4.0, 1.5, 0.3, 0.2, 0.3, 1.5, 4.0, 29]
+    };
+
+    function renderPlinkoBuckets() {
+      const risk = document.getElementById("plinkoRiskSelect")?.value || "medium";
+      const row = document.getElementById("plinkoBucketsRow");
+      if (!row) return;
+      row.innerHTML = PLINKO_BUCKETS[risk].map((m) => {
+        const cls = m >= 10
+          ? "bg-pakCrimson text-white"
+          : m >= 1.5
+            ? "bg-pakGold text-pakBg"
+            : "bg-pakSurface text-slate-300";
+        return `<div class="py-1 rounded-md ${cls}">${m}x</div>`;
+      }).join("");
+    }
+
+    function drawPlinkoPyramid(ballPos) {
+      const c = document.getElementById("plinkoPyramidCanvas");
+      if (!c) return;
+      const r = c.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0) {
+        c.width = r.width * window.devicePixelRatio;
+        c.height = r.height * window.devicePixelRatio;
+      }
+      const ctx = c.getContext("2d");
+      const w = c.width;
+      const h = c.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const rows = 8;
+      for (let row = 0; row < rows; row++) {
+        const count = row + 3;
+        const y = h * 0.14 + (row / (rows - 1)) * (h * 0.74);
+        const span = w * (0.22 + row * 0.085);
+        const startX = (w - span) / 2;
+        for (let col = 0; col < count; col++) {
+          const x = startX + (col / (count - 1)) * span;
+          ctx.beginPath();
+          ctx.arc(x, y, 3.5 * window.devicePixelRatio, 0, Math.PI * 2);
+          ctx.fillStyle = "#ffe48f";
+          ctx.fill();
+        }
+      }
+
+      if (ballPos) {
+        ctx.beginPath();
+        ctx.arc(ballPos.x * w, ballPos.y * h, 7 * window.devicePixelRatio, 0, Math.PI * 2);
+        ctx.fillStyle = "#e62e3d";
+        ctx.fill();
+      }
+    }
+
+    function dropPlinkoBall() {
+      const stake = parseFloat(document.getElementById("plinkoStakeInput")?.value || "0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      const risk = document.getElementById("plinkoRiskSelect")?.value || "medium";
+      const buckets = PLINKO_BUCKETS[risk];
+      const favorWin = Math.random() * 100 < state.winRates.mini;
+
+      let step = 0;
+      let normX = 0.5;
+      const timer = setInterval(() => {
+        step++;
+        const drift = favorWin
+          ? (normX >= 0.5 ? 0.045 : -0.045)
+          : (Math.random() > 0.5 ? 0.032 : -0.032);
+        normX = Math.min(0.92, Math.max(0.08, normX + drift));
+        drawPlinkoPyramid({ x: normX, y: 0.12 + step * 0.1 });
+
+        if (step >= 8) {
+          clearInterval(timer);
+          const idx = Math.min(buckets.length - 1, Math.max(0, Math.floor(normX * buckets.length)));
+          const mult = buckets[idx];
+          const win = Number((stake * mult).toFixed(2));
+          state.balance = Number((state.balance + win).toFixed(2));
+          saveState();
+          syncBalancesUI();
+          document.getElementById("plinkoLastResultBadge").textContent = `${mult}x (+Rs.${fmtRs(win)})`;
+          if (mult >= 1) playSfx("win");
+          else playSfx("boom");
+          showToast(`Plinko Landed in ${mult}x Bucket! Payout: Rs. ${fmtRs(win)}`);
+        }
+      }, 75);
+    }
+
+    /* ==================== GAME 8: ANDAR BAHAR ==================== */
+    function playAndarBaharRound(side) {
+      const stake = parseFloat(document.getElementById("abStakeInput")?.value || "0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid stake or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      const ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+      const suits = ["♠", "♥", "♦", "♣"];
+      const jokerRank = ranks[Math.floor(Math.random() * ranks.length)];
+      document.getElementById("abJokerCardBox").textContent = jokerRank + suits[0];
+
+      const playerWon = Math.random() * 100 < state.winRates.table;
+      const winningSide = playerWon ? side : (side === "Andar" ? "Bahar" : "Andar");
+      const otherRank = ranks.find((r) => r !== jokerRank) || "7";
+
+      document.getElementById("abAndarCardBox").textContent = winningSide === "Andar" ? jokerRank + "♦" : otherRank + "♣";
+      document.getElementById("abBaharCardBox").textContent = winningSide === "Bahar" ? jokerRank + "♥" : otherRank + "♠";
+
+      if (playerWon) {
+        const win = Number((stake * 1.95).toFixed(2));
+        state.balance = Number((state.balance + win).toFixed(2));
+        playSfx("win");
+        showToast(`${winningSide} Matched Joker ${jokerRank}! +Rs. ${fmtRs(win)}`);
+      } else {
+        playSfx("boom");
+        showToast(`${winningSide} Matched Joker ${jokerRank}!`);
+      }
+      saveState();
+      syncBalancesUI();
+    }
+
+    /* ==================== GAME 9: ROULETTE VIP ==================== */
+    let selectedRoulBet = { name: "Red", mult: 2 };
+    let roulRotationDeg = 0;
+
+    function selectRouletteBet(name, mult) {
+      playSfx("tap");
+      selectedRoulBet = { name, mult };
+      document.getElementById("roulSelectedLabel").textContent = `${name.toUpperCase()} (${mult}x)`;
+      document.querySelectorAll(".roul-bet-btn").forEach((b) => {
+        const active = b.getAttribute("data-rbet") === name;
+        b.classList.toggle("ring-2", active);
+        b.classList.toggle("ring-pakGold", active);
+      });
+    }
+
+    function spinRouletteVip() {
+      const stake = parseFloat(document.getElementById("roulStakeInput")?.value || "0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      roulRotationDeg += 720 + Math.floor(Math.random() * 360);
+      document.getElementById("rouletteWheelRing").style.transform = `rotate(${roulRotationDeg}deg)`;
+
+      const redNums = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
+      setTimeout(() => {
+        let num = Math.floor(Math.random() * 37);
+        const canWin = Math.random() * 100 < state.winRates.table;
+        if (canWin && selectedRoulBet.name !== "Zero") {
+          if (selectedRoulBet.name === "Red") num = 1;
+          else if (selectedRoulBet.name === "Black") num = 2;
+          else if (selectedRoulBet.name === "Even") num = 4;
+          else if (selectedRoulBet.name === "Odd") num = 3;
+          else if (selectedRoulBet.name === "1-12") num = 7;
+          else if (selectedRoulBet.name === "13-24") num = 18;
+          else if (selectedRoulBet.name === "25-36") num = 29;
+        }
+
+        document.getElementById("roulCenterNumber").textContent = String(num);
+        document.getElementById("roulLastNumBadge").textContent = String(num);
+
+        const hit =
+          (selectedRoulBet.name === "Zero" && num === 0) ||
+          (selectedRoulBet.name === "Red" && redNums.has(num)) ||
+          (selectedRoulBet.name === "Black" && num > 0 && !redNums.has(num)) ||
+          (selectedRoulBet.name === "Even" && num > 0 && num % 2 === 0) ||
+          (selectedRoulBet.name === "Odd" && num % 2 === 1) ||
+          (selectedRoulBet.name === "1-12" && num >= 1 && num <= 12) ||
+          (selectedRoulBet.name === "13-24" && num >= 13 && num <= 24) ||
+          (selectedRoulBet.name === "25-36" && num >= 25 && num <= 36);
+
+        if (hit) {
+          const win = Number((stake * selectedRoulBet.mult).toFixed(2));
+          state.balance = Number((state.balance + win).toFixed(2));
+          playSfx("win");
+          showToast(`Roulette #${num}! Won +Rs. ${fmtRs(win)}`);
+        } else {
+          playSfx("boom");
+          showToast(`Roulette Landed on #${num}`);
+        }
+        saveState();
+        syncBalancesUI();
+      }, 950);
+    }
+
+    /* ==================== GAME 10: 7 UP DOWN ==================== */
+    function rollSevenUpDown(choice) {
+      const stake = parseFloat(document.getElementById("sevenUpStakeInput")?.value || "0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      playSfx("tap");
+
+      let d1 = 1 + Math.floor(Math.random() * 6);
+      let d2 = 1 + Math.floor(Math.random() * 6);
+      if (Math.random() * 100 < state.winRates.mini) {
+        if (choice === "Down") { d1 = 2; d2 = 3; }
+        else if (choice === "Seven") { d1 = 3; d2 = 4; }
+        else { d1 = 5; d2 = 4; }
+      }
+      const sum = d1 + d2;
+      document.getElementById("diceFaceA").textContent = String(d1);
+      document.getElementById("diceFaceB").textContent = String(d2);
+      document.getElementById("sevenUpSumBadge").textContent = `Sum: ${sum}`;
+
+      const outcome = sum < 7 ? "Down" : sum === 7 ? "Seven" : "Up";
+      if (outcome === choice) {
+        const mult = choice === "Seven" ? 5.0 : 2.0;
+        const win = Number((stake * mult).toFixed(2));
+        state.balance = Number((state.balance + win).toFixed(2));
+        playSfx("win");
+        showToast(`Dice Sum ${sum} (${outcome})! +Rs. ${fmtRs(win)}`);
+      } else {
+        playSfx("boom");
+        showToast(`Dice Sum ${sum} (${outcome})`);
+      }
+      saveState();
+      syncBalancesUI();
+    }
+
+    /* ==================== GAME 11: LIMBO ROCKET ==================== */
+    function updateLimboChanceLabel() {
+      const t = Math.max(1.1, parseFloat(document.getElementById("limboTargetInput")?.value || "2.0"));
+      const chance = Math.min(90, Math.max(1, (96 / t))).toFixed(1);
+      document.getElementById("limboWinChanceBadge").textContent = `Chance: ${chance}%`;
+    }
+
+    function launchLimboRocket() {
+      const stake = parseFloat(document.getElementById("limboStakeInput")?.value || "0");
+      const target = parseFloat(document.getElementById("limboTargetInput")?.value || "2.0");
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance || Number.isNaN(target) || target < 1.1) {
+        showToast("Check bet amount & target multiplier!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+
+      const canWin = Math.random() * 100 < Math.min(state.winRates.aviator, 96 / target);
+      const resultMult = canWin
+        ? Number((target + Math.random() * 1.8).toFixed(2))
+        : Number(Math.max(1.0, target * (0.35 + Math.random() * 0.55)).toFixed(2));
+
+      const resEl = document.getElementById("limboResultMult");
+      resEl.textContent = resultMult.toFixed(2) + "x";
+
+      if (resultMult >= target) {
+        const win = Number((stake * target).toFixed(2));
+        state.balance = Number((state.balance + win).toFixed(2));
+        resEl.className = "font-mono text-4xl sm:text-5xl font-black text-pakGreen";
+        document.getElementById("limboResultSub").textContent = `🚀 Rocket cleared ${target.toFixed(2)}x! Won Rs. ${fmtRs(win)}`;
+        playSfx("win");
+        showToast(`Limbo Rocket Hit ${resultMult.toFixed(2)}x! +Rs. ${fmtRs(win)}`);
+      } else {
+        resEl.className = "font-mono text-4xl sm:text-5xl font-black text-pakCrimson";
+        document.getElementById("limboResultSub").textContent = `💥 Exploded at ${resultMult.toFixed(2)}x (Target ${target.toFixed(2)}x)`;
+        playSfx("boom");
+      }
+      saveState();
+      syncBalancesUI();
+    }
+
+    /* ==================== GAME 12: CRASH DICE (0-100) ==================== */
+    function updateCrashDiceMath() {
+      const thresh = Number(document.getElementById("cdiceSlider")?.value || 50);
+      document.getElementById("cdiceThresholdVal").textContent = String(thresh);
+      document.getElementById("cdiceWinChanceVal").textContent = thresh + "%";
+      const mult = (98 / thresh).toFixed(2);
+      document.getElementById("cdicePayoutBadge").textContent = `Payout: ${mult}x`;
+    }
+
+    function rollCrashDice(mode) {
+      const stake = parseFloat(document.getElementById("cdiceStakeInput")?.value || "0");
+      const thresh = Number(document.getElementById("cdiceSlider")?.value || 50);
+      if (Number.isNaN(stake) || stake < 10 || stake > state.balance) {
+        showToast("Invalid bet or insufficient balance!");
+        return;
+      }
+      state.balance = Number((state.balance - stake).toFixed(2));
+      saveState();
+      syncBalancesUI();
+
+      const chancePct = mode === "Under" ? thresh : (100 - thresh);
+      const payoutMult = Number((98 / Math.max(5, chancePct)).toFixed(2));
+      let rolled = Number((Math.random() * 100).toFixed(2));
+
+      if (Math.random() * 100 < Math.min(state.winRates.mini, chancePct)) {
+        rolled = mode === "Under"
+          ? Number((Math.random() * (thresh - 0.5)).toFixed(2))
+          : Number((thresh + 0.5 + Math.random() * (99.5 - thresh)).toFixed(2));
+      }
+
+      const numEl = document.getElementById("cdiceRolledNum");
+      numEl.textContent = rolled.toFixed(2);
+      const won = (mode === "Under" && rolled < thresh) || (mode === "Over" && rolled > thresh);
+
+      if (won) {
+        const win = Number((stake * payoutMult).toFixed(2));
+        state.balance = Number((state.balance + win).toFixed(2));
+        numEl.className = "font-mono text-4xl font-black text-pakGreen";
+        playSfx("win");
+        showToast(`Rolled ${rolled.toFixed(2)} (${mode} ${thresh})! +Rs. ${fmtRs(win)}`);
+      } else {
+        numEl.className = "font-mono text-4xl font-black text-pakCrimson";
+        playSfx("boom");
+        showToast(`Rolled ${rolled.toFixed(2)} — Missed!`);
+      }
+      saveState();
+      syncBalancesUI();
+    }
+
+    function refreshWalletDisplay() {
+      playSfx("tap");
+      syncBalancesUI();
+      showToast("Wallet Balance Synced");
+    }
+
+    function toggleWalletSubView(view) {
+      playSfx("tap");
+      const isDep = view === "deposit";
+      document.getElementById("walletDepositSection").classList.toggle("hidden", !isDep);
+      document.getElementById("walletWithdrawSection").classList.toggle("hidden", isDep);
+      document.getElementById("wTabDepBtn").className = isDep
+        ? "px-3.5 py-2 rounded-xl pak-gold-btn font-black text-xs cursor-pointer"
+        : "px-3.5 py-2 rounded-xl bg-black/45 text-slate-300 font-black text-xs cursor-pointer";
+      document.getElementById("wTabWitBtn").className = !isDep
+        ? "px-3.5 py-2 rounded-xl pak-fire-btn font-black text-xs cursor-pointer"
+        : "px-3.5 py-2 rounded-xl bg-black/45 text-slate-300 font-black text-xs cursor-pointer";
+    }
+
+    function chooseWalletMethod(flow, m) {
+      playSfx("tap");
+      if (flow === "deposit") {
+        depMethod = m;
+        document.getElementById("depCardEp").className = m === "EasyPaisa"
+          ? "p-3 rounded-2xl border-2 border-pakGreen bg-emerald-950/60 text-left cursor-pointer"
+          : "p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer";
+        document.getElementById("depCardJc").className = m === "JazzCash"
+          ? "p-3 rounded-2xl border-2 border-pakCrimson bg-rose-950/60 text-left cursor-pointer"
+          : "p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer";
+        syncReceivingAccountDisplay();
+      } else {
+        witMethod = m;
+        document.getElementById("witCardEp").className = m === "EasyPaisa"
+          ? "p-3 rounded-2xl border-2 border-pakGreen bg-emerald-950/60 text-left cursor-pointer"
+          : "p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer";
+        document.getElementById("witCardJc").className = m === "JazzCash"
+          ? "p-3 rounded-2xl border-2 border-pakCrimson bg-rose-950/60 text-left cursor-pointer"
+          : "p-3 rounded-2xl border border-white/10 bg-pakSurface text-left cursor-pointer";
+      }
+    }
+
+    function syncReceivingAccountDisplay() {
+      const ep = depMethod === "EasyPaisa";
+      document.getElementById("depActiveMethodName").textContent = depMethod;
+      document.getElementById("depAccountNumberDisplay").textContent = ep ? state.accounts.epNum : state.accounts.jcNum;
+      document.getElementById("depAccountTitleDisplay").textContent = ep ? state.accounts.epTitle : state.accounts.jcTitle;
+    }
+
+    function copyReceivingAccountNum() {
+      const num = depMethod === "EasyPaisa" ? state.accounts.epNum : state.accounts.jcNum;
+      copyTextValue(num, `${depMethod} Number ${num} Copied!`);
+    }
+
+    function submitPakDeposit(e) {
+      e.preventDefault();
+      const amount = parseFloat(document.getElementById("depAmountField").value);
+      const tid = document.getElementById("depTidInput").value.trim();
+      if (Number.isNaN(amount) || amount < 100 || !tid) return;
+
+      state.transactions.unshift({
+        id: "DEP-" + Date.now().toString().slice(-4),
+        type: "Deposit",
+        method: depMethod,
+        amount,
+        detail: tid,
+        holder: "M920_VIP_786",
+        status: "Pending"
+      });
+      document.getElementById("depTidInput").value = "";
+      saveState();
+      renderTxLists();
+      playSfx("tap");
+      showToast(`Deposit Rs. ${fmtRs(amount)} Submitted (Pending Admin Approval)`);
+    }
+
+    function submitPakWithdraw(e) {
+      e.preventDefault();
+      const holder = document.getElementById("witNameInput").value.trim();
+      const mobile = document.getElementById("witNumberInput").value.trim();
+      const amount = parseFloat(document.getElementById("witAmountField").value);
+      if (!holder || !mobile || Number.isNaN(amount) || amount < 200 || amount > state.balance) {
+        showToast("Check withdrawal details & available balance!");
+        return;
+      }
+
+      state.balance = Number((state.balance - amount).toFixed(2));
+      state.transactions.unshift({
+        id: "WIT-" + Date.now().toString().slice(-4),
+        type: "Withdrawal",
+        method: witMethod,
+        amount,
+        detail: mobile,
+        holder,
+        status: "Pending"
+      });
+      document.getElementById("witAmountField").value = "";
+      saveState();
+      syncBalancesUI();
+      renderTxLists();
+      playSfx("tap");
+      showToast(`Withdrawal Rs. ${fmtRs(amount)} Submitted (Pending)`);
+    }
+
+    function renderTxLists() {
+      const pill = (st) => {
+        if (st === "Approved") return `<span class="px-2 py-0.5 rounded-full font-mono text-[10px] font-bold bg-pakGreen/20 text-pakGreen border border-pakGreen/40">Approved</span>`;
+        if (st === "Rejected") return `<span class="px-2 py-0.5 rounded-full font-mono text-[10px] font-bold bg-pakCrimson/20 text-rose-300 border border-pakCrimson/40">Rejected</span>`;
+        return `<span class="px-2 py-0.5 rounded-full font-mono text-[10px] font-bold bg-pakGold/20 text-pakGold border border-pakGold/40">Pending</span>`;
+      };
+
+      document.getElementById("pakTxHistoryList").innerHTML = state.transactions.map((t) => `
+        <div class="rounded-xl bg-pakSurface/80 border border-white/10 p-3 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-white">${t.type} • <span class="text-pakGold">${t.method}</span></div>
+            <div class="font-mono text-[10px] text-slate-400">${t.detail} (${t.holder})</div>
+          </div>
+          <div class="text-right">
+            <div class="font-mono font-black ${t.type === "Deposit" ? "text-pakGreen" : "text-rose-400"}">
+              ${t.type === "Deposit" ? "+" : "-"}Rs. ${fmtRs(t.amount)}
+            </div>
+            <div class="mt-0.5">${pill(t.status)}</div>
+          </div>
+        </div>
+      `).join("");
+
+      document.getElementById("admTxApprovalQueue").innerHTML = state.transactions.map((t) => `
+        <div class="rounded-xl bg-pakSurface border border-white/10 p-3 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div>
+            <div class="font-black text-white">${t.id} • ${t.type} (${t.method})</div>
+            <div class="font-mono text-slate-300">Rs. <strong class="text-pakGold">${fmtRs(t.amount)}</strong> • ${t.detail} (${t.holder})</div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            ${pill(t.status)}
+            ${t.status === "Pending" ? `
+              <button type="button" onclick="adminHandleTx('${t.id}', 'Approved')" class="px-2.5 py-1 rounded-lg bg-pakGreen text-pakBg font-black cursor-pointer">Approve</button>
+              <button type="button" onclick="adminHandleTx('${t.id}', 'Rejected')" class="px-2.5 py-1 rounded-lg pak-fire-btn font-black cursor-pointer">Reject</button>
+            ` : ""}
+          </div>
+        </div>
+      `).join("");
+
+      const approvedDep = state.transactions.filter((t) => t.type === "Deposit" && t.status === "Approved").reduce((a, b) => a + b.amount, 0);
+      const pendingWit = state.transactions.filter((t) => t.type === "Withdrawal" && t.status === "Pending").length;
+      document.getElementById("admStatDeposits").textContent = "Rs. " + fmtRs(approvedDep);
+      document.getElementById("admStatPendingWit").textContent = String(pendingWit);
+      document.getElementById("admStatProfit").textContent = "Rs. " + fmtRs(state.houseProfit);
+    }
+
+    function adminHandleTx(id, status) {
+      const tx = state.transactions.find((x) => x.id === id);
+      if (!tx || tx.status !== "Pending") return;
+      tx.status = status;
+      if (tx.type === "Deposit" && status === "Approved") state.balance = Number((state.balance + tx.amount).toFixed(2));
+      if (tx.type === "Withdrawal" && status === "Rejected") state.balance = Number((state.balance + tx.amount).toFixed(2));
+      saveState();
+      syncBalancesUI();
+      renderTxLists();
+      playSfx("win");
+      showToast(`${tx.type} ${id} ${status}!`);
+    }
+
+    /* ==================== SUPER ADMIN MASTER PANEL ==================== */
+    function openSuperAdminPinPrompt() {
+      playSfx("tap");
+      document.getElementById("adminPinErr").classList.add("hidden");
+      document.getElementById("adminPinInput").value = "";
+      document.getElementById("adminAuthModal").classList.remove("hidden");
+    }
+
+    function submitAdminPin(e) {
+      e.preventDefault();
+      if (document.getElementById("adminPinInput").value.trim() !== MASTER_ADMIN_PIN) {
+        playSfx("boom");
+        document.getElementById("adminPinErr").classList.remove("hidden");
+        return;
+      }
+      playSfx("win");
+      document.getElementById("adminAuthModal").classList.add("hidden");
+      openSuperAdminPanel();
+    }
+
+    function openSuperAdminPanel() {
+      document.getElementById("rngWinAviator").value = state.winRates.aviator;
+      document.getElementById("rngWinWingo").value = state.winRates.wingo;
+      document.getElementById("rngWinSlots").value = state.winRates.slots;
+      document.getElementById("rngWinTable").value = state.winRates.table;
+      document.getElementById("rngWinMini").value = state.winRates.mini ?? 48;
+      updateAdminWinRates();
+
+      document.getElementById("admEpNumInput").value = state.accounts.epNum;
+      document.getElementById("admEpTitleInput").value = state.accounts.epTitle;
+      document.getElementById("admJcNumInput").value = state.accounts.jcNum;
+      document.getElementById("admJcTitleInput").value = state.accounts.jcTitle;
+
+      refreshAdminForceLabels();
+      renderTxLists();
+      document.getElementById("superAdminPanel").classList.remove("hidden");
+    }
+
+    function updateAdminWinRates() {
+      state.winRates.aviator = Number(document.getElementById("rngWinAviator").value);
+      state.winRates.wingo = Number(document.getElementById("rngWinWingo").value);
+      state.winRates.slots = Number(document.getElementById("rngWinSlots").value);
+      state.winRates.table = Number(document.getElementById("rngWinTable").value);
+      state.winRates.mini = Number(document.getElementById("rngWinMini").value);
+
+      document.getElementById("valWinAviator").textContent = state.winRates.aviator + "%";
+      document.getElementById("valWinWingo").textContent = state.winRates.wingo + "%";
+      document.getElementById("valWinSlots").textContent = state.winRates.slots + "%";
+      document.getElementById("valWinTable").textContent = state.winRates.table + "%";
+      document.getElementById("valWinMini").textContent = state.winRates.mini + "%";
+      saveState();
+    }
+
+    function applyForceAviator() {
+      const val = parseFloat(document.getElementById("admForceAviatorField").value);
+      state.forcedAviator = !Number.isNaN(val) && val >= 1.01 ? Number(val.toFixed(2)) : null;
+      saveState();
+      refreshAdminForceLabels();
+      showToast(state.forcedAviator ? `Next Aviator locked at ${state.forcedAviator}x` : "Aviator reset to Auto");
+    }
+
+    function applyForceWingo() {
+      const v = document.getElementById("admForceWingoSelect").value;
+      state.forcedWingo = v === "" ? null : Number(v);
+      saveState();
+      refreshAdminForceLabels();
+      showToast(state.forcedWingo !== null ? `Next Win Go locked to #${state.forcedWingo}` : "Win Go reset to Auto");
+    }
+
+    function refreshAdminForceLabels() {
+      document.getElementById("admForceAviatorStatus").textContent = state.forcedAviator
+        ? `LOCKED Next Aviator: ${state.forcedAviator.toFixed(2)}x`
+        : "Next Aviator: Auto";
+      document.getElementById("admForceWingoStatus").textContent = state.forcedWingo !== null
+        ? `LOCKED Next Win Go: #${state.forcedWingo}`
+        : "Next Win Go: Auto";
+    }
+
+    function saveAdminReceivingAccounts(e) {
+      e.preventDefault();
+      state.accounts.epNum = document.getElementById("admEpNumInput").value.trim();
+      state.accounts.epTitle = document.getElementById("admEpTitleInput").value.trim();
+      state.accounts.jcNum = document.getElementById("admJcNumInput").value.trim();
+      state.accounts.jcTitle = document.getElementById("admJcTitleInput").value.trim();
+      saveState();
+      syncReceivingAccountDisplay();
+      showToast("EasyPaisa & JazzCash accounts updated live!");
+    }
+
+    function applyAdminBalanceDelta() {
+      const d = parseFloat(document.getElementById("admBalanceDeltaInput").value || "0");
+      if (Number.isNaN(d) || d === 0) return;
+      state.balance = Math.max(0, Number((state.balance + d).toFixed(2)));
+      document.getElementById("admBalanceDeltaInput").value = "";
+      saveState();
+      syncBalancesUI();
+      showToast(`User Balance updated to Rs. ${fmtRs(state.balance)}`);
+    }
+
+    function resetAdminDemoBalance() {
+      state.balance = 5000;
+      saveState();
+      syncBalancesUI();
+      showToast("Demo balance reset to Rs. 5,000.00");
+    }
+
+    /* ==================== BOOTSTRAP ==================== */
+    window.addEventListener("DOMContentLoaded", () => {
+      loadState();
+      document.getElementById("soundStatusEmoji").textContent = state.muted ? "🔇" : "🔊";
+      syncBalancesUI();
+      goPromoSlide(0);
+      renderMarqueeAndLeaderboard();
+      selectLobbyCategory("all");
+      selectRouletteBet("Red", 2);
+      updateCrashDiceMath();
+      initWingoBalls();
+      renderWingoHistoryTable();
+      renderWingoClock();
+      pickDvstChip(100);
+      renderDvstRoad();
+      renderMinesGrid();
+
+      syncReceivingAccountDisplay();
+      renderTxLists();
+
+      // Live rolling Super Jackpot counter
+      setInterval(() => {
+        state.jackpot += Math.floor(Math.random() * 140) + 25;
+        document.getElementById("superJackpotCounter").textContent = "Rs. " + fmtRs(state.jackpot);
+      }, 1500);
+
+      // Auto-advance promo carousel
+      setInterval(() => {
+        goPromoSlide((promoSlideIdx + 1) % PROMO_SLIDES.length);
+      }, 5000);
+
+      // Win Go live countdown with beep in last 5 seconds
+      setInterval(() => {
+        wingoSecLeft--;
+        if (wingoSecLeft <= 5 && wingoSecLeft > 0) {
+          const wgScreen = document.getElementById("game-wingo");
+          if (wgScreen && !wgScreen.classList.contains("hidden")) playSfx("beep");
+        }
+        if (wingoSecLeft <= 0) {
+          executeWingoDraw();
+          wingoSecLeft = wingoModeSec;
+          wingoPeriodId++;
+        }
+        renderWingoClock();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
